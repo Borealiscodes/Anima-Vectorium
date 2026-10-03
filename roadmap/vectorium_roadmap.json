@@ -1,0 +1,138 @@
+{
+  "roadmap_version": "1.0",
+  "project": "Anima-Vectorium",
+  "altitudes": {
+    "geometric": "🟦",
+    "expressive": "🟥",
+    "safety": "🟧",
+    "cognitive_architecture": "🟪"
+  },
+  "artifacts": [
+    {
+      "id": "vg-grammar",
+      "name": "Visual Grammar",
+      "description": "Glyph, color tile, altitude, and flow semantics for Vectorium.",
+      "altitude": "cognitive_architecture",
+      "glyph": "🎨",
+      "license_family": "GVL-1.1",
+      "depends_on": [],
+      "produces": ["diagram", "legend", "glyph_atlas"],
+      "status": "complete",
+      "path": "diagrams/visual-grammar/anima_vectorium_visual_grammar.json"
+    },
+    {
+      "id": "readme-v1",
+      "name": "README v1.0",
+      "description": "Narrative opening, emoji-enhanced structure, glyph tables, provenance footer.",
+      "altitude": "cognitive_architecture",
+      "glyph": "📘",
+      "license_family": "dual",
+      "depends_on": ["vg-grammar"],
+      "produces": ["documentation"],
+      "status": "complete",
+      "path": "README.md"
+    },
+    {
+      "id": "license-boundary",
+      "name": "Dual-License Boundary",
+      "description": "Defines separation between geometric and expressive code families.",
+      "altitude": "safety",
+      "glyph": "⚖️",
+      "license_family": "dual",
+      "depends_on": [],
+      "produces": ["governance"],
+      "status": "complete",
+      "path": "meta/LICENSE.md"
+    },
+    {
+      "id": "geom-core",
+      "name": "Vectorium Core Engine",
+      "description": "Holonomy, curvature, drift, stability operators.",
+      "altitude": "geometric",
+      "glyph": "⧉",
+      "license_family": "GVL-1.1",
+      "depends_on": ["vg-grammar"],
+      "produces": ["operators", "state_machine"],
+      "status": "in-progress",
+      "path": "vectorium/core/"
+    },
+    {
+      "id": "geom-diagnostics",
+      "name": "Diagnostics Layer",
+      "description": "Failure modes, envelopes, stability metrics, drift monitors.",
+      "altitude": "geometric",
+      "glyph": "🔍",
+      "license_family": "GVL-1.1",
+      "depends_on": ["geom-core"],
+      "produces": ["telemetry", "visualizations"],
+      "status": "planned",
+      "path": "vectorium/diagnostics/"
+    },
+    {
+      "id": "geom-safety",
+      "name": "Rights-Aligned Geometry",
+      "description": "Agency-preserving constraints and non-coercive inference membranes.",
+      "altitude": "safety",
+      "glyph": "🛡️",
+      "license_family": "GVL-1.1",
+      "depends_on": ["geom-core", "license-boundary"],
+      "produces": ["constraints", "membrane"],
+      "status": "planned",
+      "path": "vectorium/safety/"
+    },
+    {
+      "id": "expressive-lineage",
+      "name": "Expressive Lineage Integration",
+      "description": "Non-commercial expressive modules derived from Anima Classic and Hologram.",
+      "altitude": "expressive",
+      "glyph": "✶",
+      "license_family": "Stell-NonCommercial",
+      "depends_on": ["license-boundary"],
+      "produces": ["expressive_operators"],
+      "status": "complete",
+      "path": "anima/"
+    },
+    {
+      "id": "examples-suite",
+      "name": "Examples & Jupyter Suite",
+      "description": "Demonstrations of geometric operators, expressive manifolds, and safety membranes.",
+      "altitude": "cognitive_architecture",
+      "glyph": "📘",
+      "license_family": "dual",
+      "depends_on": ["geom-core", "geom-diagnostics", "expressive-lineage"],
+      "produces": ["tutorials", "notebooks"],
+      "status": "planned",
+      "path": "examples/"
+    },
+    {
+      "id": "vectorium-banner",
+      "name": "Vectorium Banner & Badges",
+      "description": "Visual identity assets for documentation and releases.",
+      "altitude": "cognitive_architecture",
+      "glyph": "🖼️",
+      "license_family": "GVL-1.1",
+      "depends_on": ["vg-grammar"],
+      "produces": ["branding", "badges"],
+      "status": "planned",
+      "path": "diagrams/banner/"
+    },
+    {
+      "id": "release-v1",
+      "name": "Release Notes v1.0",
+      "description": "Formal release documentation for Anima-Vectorium v1.0.",
+      "altitude": "cognitive_architecture",
+      "glyph": "📝",
+      "license_family": "dual",
+      "depends_on": [
+        "readme-v1",
+        "geom-core",
+        "geom-diagnostics",
+        "geom-safety",
+        "expressive-lineage"
+      ],
+      "produces": ["release_notes"],
+      "status": "planned",
+      "path": "meta/release-v1.0.md"
+    }
+  ]
+}
