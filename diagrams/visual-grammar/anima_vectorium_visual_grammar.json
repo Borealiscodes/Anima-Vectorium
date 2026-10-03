@@ -1,0 +1,114 @@
+{
+  "visual_grammar_version": "1.0",
+  "repo": "anima-vectorium",
+  "layers": {
+    "geometric": {
+      "license": "GVL-1.1",
+      "color": "#3A7FFF",
+      "glyph": "⧉",
+      "description": "Holonomy, curvature, drift, stability, multimodal geometry.",
+      "folders": [
+        "vectorium/core",
+        "vectorium/geometry",
+        "vectorium/diagnostics",
+        "vectorium/safety",
+        "vectorium/utils"
+      ]
+    },
+    "expressive": {
+      "license": "Stell-NonCommercial",
+      "color": "#FF6A6A",
+      "glyph": "✶",
+      "description": "Anima-derived expressive operators and lineage.",
+      "folders": [
+        "anima_hologram_v3.1",
+        "anima_classic_archive"
+      ]
+    },
+    "boundary": {
+      "color": "#FFD700",
+      "glyph": "⧀⧁",
+      "description": "Membrane separating geometric and expressive code families.",
+      "rules": [
+        "No geometric code may import expressive modules.",
+        "Expressive modules may not be relicensed.",
+        "License contamination prohibited."
+      ]
+    }
+  },
+  "operators": {
+    "holonomy": {
+      "glyph": "↻",
+      "color": "#4A90E2",
+      "description": "Measures loop displacement across expressive manifold."
+    },
+    "curvature": {
+      "glyph": "∿",
+      "color": "#7B61FF",
+      "description": "Quantifies geometric bending of state trajectories."
+    },
+    "drift": {
+      "glyph": "⇢",
+      "color": "#00C2A8",
+      "description": "Tracks directional deviation across manifold flow."
+    },
+    "stability": {
+      "glyph": "◎",
+      "color": "#FFC300",
+      "description": "Evaluates boundedness and energy feasibility."
+    },
+    "rights_aligned": {
+      "glyph": "⚖",
+      "color": "#FF8C00",
+      "description": "Agency-preserving metric constraints."
+    }
+  },
+  "flows": {
+    "expressive_flow": {
+      "glyph": "➝",
+      "color": "#FF6A6A",
+      "description": "Non-geometric expressive transitions."
+    },
+    "geometric_flow": {
+      "glyph": "➜",
+      "color": "#3A7FFF",
+      "description": "Holonomy-aware geometric transitions."
+    },
+    "reversible_transition": {
+      "glyph": "⇄",
+      "color": "#00C2A8",
+      "description": "State transitions preserving manifold integrity."
+    }
+  },
+  "safety": {
+    "dual_use_restriction": {
+      "glyph": "⛔",
+      "color": "#D0021B",
+      "description": "Prohibits harmful, coercive, or weaponized use."
+    },
+    "non_weaponization": {
+      "glyph": "✋",
+      "color": "#D0021B",
+      "description": "Blocks integration into kinetic or targeting systems."
+    },
+    "agency_preservation": {
+      "glyph": "⚖",
+      "color": "#FF8C00",
+      "description": "Ensures non-coercive reasoning pathways."
+    }
+  },
+  "altitudes": {
+    "expressive_altitude": {
+      "glyph": "✶",
+      "description": "Symbolic, narrative, phenomenological layer."
+    },
+    "geometric_altitude": {
+      "glyph": "⧉",
+      "description": "Holonomy, curvature, drift, stability layer."
+    },
+    "cognitive_architecture_altitude": {
+      "glyph": "⟟",
+      "description": "NDH-compatible manifold architecture layer."
+    }
+  }
+}
