@@ -1,0 +1,70 @@
+# 📜 LICENSE-GEOMETRY.txt (GVL‑1.1 — Final Version)
+
+Geometric Vectorium License — Open, Free, Dual‑Use‑Restricted, Non‑Weaponized
+Copyright (c) 2026 Borealis S. Hedling
+
+Permission is granted to use, copy, modify, merge, publish, distribute, and sublicense the geometric components of Anima‑Vectorium (including holonomy, curvature, drift, stability, multimodal operators, diagnostics, and rights‑aligned geometry), for any purpose except those explicitly prohibited below.
+
+This license applies only to geometric components and does not apply to expressive components derived from Stell’s Anima project.
+
+---
+
+1. Prohibited Uses (Dual‑Use Restriction)
+The software may not be used for:
+
+- autonomous weapons  
+- targeting systems  
+- predictive policing  
+- surveillance of protected classes  
+- coercive psychological systems  
+- rights‑violating inference systems  
+- any system that contravenes international human rights law  
+
+These prohibitions apply to all derivative works.
+
+---
+
+2. Non‑Weaponization Clause
+The software may not be integrated into:
+
+- kinetic weapon systems  
+- military targeting pipelines  
+- lethal autonomous decision systems  
+
+Research into safety, alignment, defense, or de‑escalation is permitted.
+
+---
+
+3. Rights‑Aligned Geometry Requirement
+Derivative works must preserve:
+
+- agency‑preserving reasoning directions  
+- dignity‑aligned metric terms  
+- non‑coercive inference pathways  
+- thermodynamic feasibility  
+
+These constraints may not be removed or weakened.
+
+---
+
+4. Attribution
+Redistributions must include:
+
+- this license  
+- attribution to Borealis S. Hedling
+
+---
+
+5. Commercial Use
+Commercial use is allowed without notification or permission,  
+as long as all prohibited‑use clauses are respected.
+
+No commercial tracking is required.
+
+---
+
+6. Warranty Disclaimer
+Provided “AS IS,” without warranty of any kind.
+
+---
+
