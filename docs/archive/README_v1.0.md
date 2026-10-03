@@ -243,3 +243,48 @@ No external copyrighted code included. No expressive lineage re‑licensed.
 
 ---
 
+📜 Archival Provenance Footer — README v1.0 (Corrected for docs/archive)
+
+`
+──────────────────────────────────────────────────────────────────────────────
+ARCHIVAL PROVENANCE — README v1.0
+Artifact: README.md
+Archive Path: docs/archive/README_v1.0.md
+Version: 1.0
+Repository: https://github.com/Borealiscodes/Anima-Vectorium
+Author: Borealis S. Hedling
+Location: Dublin, Ireland
+Timestamp Archived: 2026-10-04T00:27 IST
+
+Altitude: 🟪 Cognitive-Architecture
+Glyph: 📘
+License Family: Dual (GVL-1.1 + Stell Non-Commercial)
+
+Summary:
+README v1.0 served as the initial contributor-facing surface for Anima-Vectorium.
+It introduced the expressive-geometric architecture through a narrative opening,
+defined altitude color tiles, documented repository structure, enumerated core
+concepts (holonomy, curvature, drift, stability, rights-aligned geometry), and
+referenced the Visual Grammar artifact. It also established the dual-license
+boundary and included a full provenance footer for governance compliance.
+
+Dependencies:
+- Visual Grammar (vg-grammar)
+- Dual-License Boundary (license-boundary)
+
+Successor Artifact:
+README v2.0 (planned), aligned with Roadmap v2.0 and expanded infrastructure
+modules including runtime kernel, API layer, safety validator, manifold
+simulator, glyph map, and expressive-geometric bridge.
+
+Integrity Statement:
+All content in README v1.0 is original work by Borealis S. Hedling, except for
+expressive lineage references which remain under Stell’s Non-Commercial License.
+Altitude, glyph, and license tags match Roadmap v1.0. This artifact is immutable
+and archived for long-term traceability within the Anima-Vectorium governance
+spine.
+──────────────────────────────────────────────────────────────────────────────
+`
+
+---
+
