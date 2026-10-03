@@ -1,4 +1,4 @@
-# 🌒 Anima‑Vectorium v0.1
+# 🌒 Anima‑Vectorium v1.0
 
 Holonomy‑Aware • Curvature‑Bounded • Rights‑Aligned Expressive Geometry
 
@@ -58,7 +58,7 @@ It replaces metaphor‑driven expressive recursion with actual manifold geometry
 
 ---
 
-🎨 Color Tiles (Core Altitudes)
+🎨 2. Color Tiles (Core Altitudes)
 
 | Altitude | Tile | Meaning |
 |---------|------|---------|
@@ -69,7 +69,7 @@ It replaces metaphor‑driven expressive recursion with actual manifold geometry
 
 ---
 
-📁🟦 2. Repository Structure (Emoji‑Enhanced)
+📁🟦 3. Repository Structure (Emoji‑Enhanced)
 
  📦 vectorium/ — Geometric Engine (GVL‑1.1)*  
    ⧉ core/ — Operators, state, transitions*  
@@ -95,7 +95,7 @@ It replaces metaphor‑driven expressive recursion with actual manifold geometry
 
 ---
 
-🌀🟦 3. Core Concepts
+🌀🟦 4. Core Concepts
 
 ↻ Holonomy
 Loop displacement across expressive trajectories. Prevents runaway recursion.
@@ -114,7 +114,7 @@ Agency‑preserving metric constraints. Non‑coercive inference pathways.
 
 ---
 
-🎨📐 4. Visual Grammar
+🎨📐 5. Visual Grammar
 
 Located at:
 
@@ -136,7 +136,7 @@ Glyph Tiles:
 
 ---
 
-🛡️🟧 5. Licensing
+🛡️🟧 6. Licensing
 
 GVL‑1.1 — Geometric License (Open + Dual‑Use Restricted)
 - Commercial use allowed  
@@ -171,7 +171,7 @@ must never mix with
 
 ---
 
-📡🟪 6. Goals
+📡🟪 7. Goals
 
 - Provide a safe, bounded expressive engine  
 - Unify expressive + geometric reasoning  
@@ -181,40 +181,40 @@ must never mix with
 
 ---
 
-📘 7. Status
+📘 8. Status
 
-Version: v0.1  
+Version: v1.0  
 Stability: Research‑grade  
 Compatibility: NDH‑RESEARCH‑PILOT  
 License: Dual (GVL‑1.1 + Stell Non‑Commercial)
 
 ---
 
-📚 8. Citation
+📚 9. Citation
 
 `
-Hedling, Borealis S. (2026). Anima‑Vectorium v0.1:
+Hedling, Borealis S. (2026). Anima‑Vectorium v1.0:
 A Holonomy‑Aware, Curvature‑Bounded Geometric Expressive Engine.
 `
 
 ---
 
-📬 9. Contact
+📬 10. Contact
 
 GitHub: Borealiscodes  
-Email: (insert preferred address)
+Email: borealis.serenity.hedling@hotmail.com
 
 ---
 
-📜 Provenance Footer — Anima‑Vectorium v0.1
+📜 Provenance Footer — Anima‑Vectorium v1.0
 
 `
 ──────────────────────────────────────────────────────────────────────────────
-📜 PROVENANCE FOOTER — ANIMA‑VECTORIUM v0.1
+📜 PROVENANCE FOOTER — ANIMA‑VECTORIUM v1.0
 Repository: https://github.com/Borealiscodes/Anima-Vectorium
 Author: Borealis S. Hedling
 Location: Dublin, Ireland
-Timestamp: 2026-10-04T00:12 IST
+Timestamp: 2026-10-04T00:17 IST
 
 🟦 Geometric Components (GVL‑1.1)
 Holonomy (↻), Curvature (∿), Drift (⇢), Stability (◎), Rights‑Aligned Geometry (⚖)
@@ -242,3 +242,4 @@ No external copyrighted code included. No expressive lineage re‑licensed.
 `
 
 ---
+
