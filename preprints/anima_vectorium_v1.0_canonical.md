@@ -1,52 +1,75 @@
-# 📄 Anima‑Vectorium v1.0 (Canonical Edition)
+# 🌐 Anima‑Vectorium v1.0 (Canonical Edition)
 
-An Expressive–Geometric Architecture for Governed Transformation
+Hybrid Markdown + HTML Stabilized Preprint
 
-Preprint v1.0 — Consolidated from Ten Developmental Drafts
+`html
+<!-- Zenodo-safe ASCII mode -->
+<!-- Stabilization Layer: Prevent whitespace compression, preserve ASCII diagrams -->
+`
+
+<span style="background:#4A90E2;color:white;padding:6px 12px;border-radius:6px;font-size:1.3em;">
+📘 Anima‑Vectorium v1.0 — Canonical Edition
+</span>
+
+<br><br>
 
 ---
 
-Abstract
+🟦 Abstract
 
-Anima‑Vectorium is an expressive–geometric architecture designed to transform expressive content through a governed manifold system. Expressive states are projected into a geometric space where deterministic operators—holonomy, curvature, drift, stability—act under a kernel that enforces verified safety constraints. The architecture provides a clear separation between expressive meaning and geometric behavior, enabling predictable transformations and mathematically grounded safety.
+<div>
+Anima‑Vectorium is an expressive–geometric architecture designed to transform expressive
+content through a governed manifold system. Expressive states are projected into a geometric
+space where deterministic operators—holonomy, curvature, drift, stability—act under a kernel
+that enforces verified safety constraints. The architecture provides a clear separation between
+expressive meaning and geometric behavior, enabling predictable transformations and
+mathematically grounded safety.
 
-Although labeled Version 1.0, this document is a consolidated edition derived from ten developmental drafts. Each contributed a structural layer: expressive foundations, projection mechanics, geometric operators, kernel determinism, safety topology, verification, categorical framing, and manifold construction. The evolution chart included in the appendix documents this progression.
+Although labeled Version 1.0, this document is a consolidated edition derived from ten
+developmental drafts. Each contributed a structural layer: expressive foundations, projection
+mechanics, geometric operators, kernel determinism, safety topology, verification, categorical
+framing, and manifold construction. The evolution chart included in the appendix documents
+this progression.
+</div>
 
 ---
 
-1. Introduction
+<!-- SECTION BREAK -->
 
-Modern AI systems often rely on learned internal geometry shaped indirectly through optimization. This produces powerful but opaque structures whose behavior can be difficult to interpret or constrain. Anima‑Vectorium takes a different approach: it defines geometry explicitly and governs how expressive content interacts with it.
+🟦 1. Introduction
+
+<div>
+Modern AI systems often rely on learned internal geometry shaped indirectly through
+optimization. This produces powerful but opaque structures whose behavior can be difficult to
+interpret or constrain. Anima‑Vectorium takes a different approach: it defines geometry
+explicitly and governs how expressive content interacts with it.
 
 The architecture rests on three principles:
 
 1. Expressive meaning should be represented clearly and intentionally.  
 2. Geometric transformation should be deterministic and interpretable.  
 3. Safety should be enforced at the operator level, not as a post‑processing filter.
-
-These principles guide the design of the expressive manifold, the projection functor, the geometric manifold, the operator algebra, the kernel, and the safety homotopy.
+</div>
 
 ---
 
-2. System Overview
+<!-- SECTION BREAK -->
 
+🟦 2. System Overview
+
+<div>
 The architecture follows a structured pipeline:
+</div>
+
+<br>
 
 $$
 (EM \xrightarrow{\Pi} GM) \xrightarrow{K} S
 $$
 
-Where:
+<br>
 
-- \(E_M\) is the expressive manifold  
-- \(\Pi\) is the projection functor  
-- \(G_M\) is the geometric manifold  
-- \(K\) is the deterministic kernel  
-- \(S\) is the safety layer with homotopy guarantees  
-
-Expanded ASCII Diagram
-
-`
+<pre>
 +=========================================================================+
 |                         EXPRESSIVE MANIFOLD (E_M)                       |
 |  Smooth expressive charts, atlas, fiber bundles, lineage transitions    |
@@ -67,177 +90,173 @@ Expanded ASCII Diagram
 |  Membrane (soft boundary), Validator (hard boundary), Safety Homotopy   |
 |  Homotopy-invariant SafeRegion                                         |
 +=========================================================================+
-`
+</pre>
 
 ---
 
-3. Expressive Manifold
+<!-- SECTION BREAK -->
 
-The expressive manifold provides a structured space for symbolic and narrative content.
+🟦 3. Expressive Manifold
+
+<span style="background:#4A90E2;color:white;padding:4px 10px;border-radius:6px;">
+Expressive Layer
+</span>
+
+<br><br>
 
 $$
 EM = (U, \mathcal{A}E)
 $$
 
-- \(U\): expressive charts  
-- \(\mathcal{A}_E\): expressive atlas  
-
-Expressive tangent bundle:
-
-$$
-\piE : T(EM) \rightarrow E_M
-$$
-
-All charts are smooth:
-
-$$
-u \in C^\infty
-$$
-
-This ensures expressive transitions behave predictably under projection.
+<div>
+The expressive manifold provides a structured space for symbolic and narrative content.
+Charts are smooth, transitions are differentiable, and expressive tangent vectors are well
+defined.
+</div>
 
 ---
 
-4. Projection Functor and Homotopy
+<!-- SECTION BREAK -->
 
-The projection functor maps expressive states into geometric form:
+🟩 4. Projection Functor and Homotopy
+
+<span style="background:#7ED321;color:white;padding:4px 10px;border-radius:6px;">
+Geometric Bridge
+</span>
+
+<br><br>
 
 $$
 \Pi : EM \rightarrow GM
 $$
 
-A homotopy ensures projection remains within safe geometric regions:
-
 $$
 H : EM \times [0,1] \rightarrow GM
 $$
 
-Safety condition:
-
-$$
-H(e,t) \in \text{SafeRegion} \quad \forall t \in [0,1]
-$$
-
-This guarantees that expressive transformations do not produce unsafe geometric states.
+<div>
+The projection functor maps expressive states into geometric form. A homotopy ensures that
+projection remains within safe geometric regions, preventing unsafe transitions.
+</div>
 
 ---
 
-5. Geometric Manifold
+<!-- SECTION BREAK -->
 
-The geometric manifold defines the space where operators act:
+🟩 5. Geometric Manifold
+
+<span style="background:#7ED321;color:white;padding:4px 10px;border-radius:6px;">
+Geometric Layer
+</span>
+
+<br><br>
 
 $$
 GM = (V, \mathcal{A}G)
 $$
 
-- \(V\): geometric charts  
-- \(\mathcal{A}_G\): geometric atlas  
-
-Geometric tangent bundle:
-
-$$
-\piG : T(GM) \rightarrow G_M
-$$
-
-Operators act on tangent vectors, shaping geometric evolution.
+<div>
+The geometric manifold defines the space where operators act. It includes charts, atlases,
+tangent bundles, and operator domains.
+</div>
 
 ---
 
-6. Operator Algebra
+<!-- SECTION BREAK -->
 
-Operators form a structured algebra:
+🟧 6. Operator Algebra
+
+<span style="background:#F5A623;color:white;padding:4px 10px;border-radius:6px;">
+Kernel Operators
+</span>
+
+<br><br>
 
 $$
 \mathcal{O} = \{\text{Hol}, \text{Curv}, \text{Drift}, \text{Stab}\}
 $$
 
-Commutation relations:
-
-$$
-[\text{Hol}, \text{Curv}] \neq 0
-$$
-
-$$
-[\text{Drift}, \text{Stab}] = 0
-$$
-
-These constraints ensure predictable operator interactions.
+<div>
+Operators form a structured algebra with defined commutation relations. Holonomy and
+curvature do not commute; drift and stability do.
+</div>
 
 ---
 
-7. Kernel
+<!-- SECTION BREAK -->
 
-The kernel applies operators in a deterministic sequence:
+🟧 7. Kernel
+
+<span style="background:#F5A623;color:white;padding:4px 10px;border-radius:6px;">
+Deterministic Kernel
+</span>
+
+<br><br>
 
 $$
 K : GM \rightarrow GM
 $$
 
-Determinism:
-
-$$
-K(g1) = K(g2) \iff g1 = g2
-$$
-
-Safety preservation:
-
-$$
-g \in \text{SafeRegion} \Rightarrow K(g) \in \text{SafeRegion}
-$$
-
-The kernel enforces operator‑level safety rather than relying on post‑hoc filtering.
+<div>
+The kernel applies operators deterministically. It preserves safety and ensures that geometric
+transformations remain predictable.
+</div>
 
 ---
 
-8. Safety Homotopy
+<!-- SECTION BREAK -->
 
-Safety is defined through a homotopy‑invariant region:
+🟥 8. Safety Homotopy
+
+<span style="background:#D0021B;color:white;padding:4px 10px;border-radius:6px;">
+Safety Layer
+</span>
+
+<br><br>
 
 $$
 \text{SafeRegion} \subset G_M
 $$
 
-Safety layer:
-
-$$
-S = (\mathcal{M}, \mathcal{V}, \mathcal{H})
-$$
-
-Homotopy invariance:
-
-$$
-\text{SafeRegion is homotopy-invariant}
-$$
-
-Operators preserve safety:
-
-$$
-\mathcal{O}(g) \in \text{SafeRegion}
-$$
+<div>
+Safety is defined through a homotopy‑invariant region. Operators preserve safety, and the
+kernel enforces safety constraints at the operator level.
+</div>
 
 ---
 
-9. Category‑Theoretic Structure
+<!-- SECTION BREAK -->
 
-The architecture supports categorical lifting:
+🟪 9. Category‑Theoretic Structure
 
-- Monads  
-- Adjunctions  
-- Natural transformations  
+<span style="background:#9013FE;color:white;padding:4px 10px;border-radius:6px;">
+Category Theory Layer
+</span>
 
-Adjunction:
+<br><br>
 
 $$
 \Pi \dashv K
 $$
 
-This relationship aligns expressive projection with geometric execution.
+<div>
+The architecture supports categorical lifting, including monads, adjunctions, and natural
+transformations. The adjunction aligns expressive projection with geometric execution.
+</div>
 
 ---
 
-10. Evolution Chart (Developmental Lineage)
+<!-- SECTION BREAK -->
 
-`
+🟨 10. Evolution Chart
+
+<span style="background:#F8E71C;color:black;padding:4px 10px;border-radius:6px;">
+Developmental Lineage
+</span>
+
+<br><br>
+
+<pre>
 Draft    Altitude Added                     Contribution
 ---------------------------------------------------------------------------
 1        Expressive                         Foundational concept
@@ -252,78 +271,117 @@ Draft    Altitude Added                     Contribution
 10       Manifold Construction              Safety homotopy, fiber bundles
 ---------------------------------------------------------------------------
 v1.0     Canonical Release                  Unified architecture
-`
+</pre>
 
 ---
 
-11. Citation Ontology and References
+<!-- SECTION BREAK -->
 
-11.1 Citation Ontology (Layer 1)
+🟦 11. Citation Ontology and References
 
-Lineage
-- Stell, A. — ANIMA (Classic Edition)  
-- Anima‑Vectorium v1.0 (Canonical Edition)
+🟦 11.1 Citation Ontology (Layer 1)
 
-Expressive Foundations
-Mac Lane, Awodey, Lawvere & Schanuel, Riehl.
+<div>
+The Citation Ontology defines the structured categories governing all citations used in the
+Anima‑Vectorium architecture.
+</div>
 
-Geometric Foundations
-Lee, do Carmo, Spivak, Kobayashi & Nomizu.
-
-Operator Algebra
-Kadison & Ringrose, Connes, Sakai.
-
-Safety Topology
-Hatcher, May, Bredon, Spanier.
-
-Kernel Verification
-Hoare, Clarke–Grumberg–Peled, Baier & Katoen, Lamport.
-
-Comparative AI
-Olah et al., Mitchell, Russell & Norvig, Amodei et al.
+<pre>
+Citation Ontology
+│
+├── Lineage
+│     └── ANIMA Classic → Anima‑Vectorium
+│
+├── Expressive Foundations
+│     └── Category theory, expressive manifolds
+│
+├── Geometric Foundations
+│     └── Differential geometry, curvature, holonomy
+│
+├── Operator Algebra
+│     └── Non‑commutative operators, C*-algebras
+│
+├── Safety Topology
+│     └── Homotopy, sheaves, topological invariants
+│
+├── Kernel Verification
+│     └── Hoare logic, model checking, bisimulation
+│
+└── Comparative AI
+      └── Interpretability, safety, architecture comparisons
+</pre>
 
 ---
 
-11.2 References (Layer 2, APA Style)
+🟦 11.2 References (APA Style)
+
+<div>
+All references are formatted according to APA 7th edition.
+</div>
+
+<br>
 
 Primary Lineage Artifact
-Stell, A. (2026). ANIMA (Classic Edition): Recursive expressive ecology engine. Zenodo. https://doi.org/10.5281/zenodo.22812349
+
+Stell, A. (2026). ANIMA (Classic Edition): Recursive expressive ecology engine. Zenodo.  
+https://doi.org/10.5281/zenodo.22812349
+
+---
 
 Expressive Foundations
+
 Awodey, S. (2010). Category theory. Oxford University Press.  
 Lawvere, F. W., & Schanuel, S. H. (2009). Conceptual mathematics. Cambridge University Press.  
 Mac Lane, S. (1998). Categories for the working mathematician (2nd ed.). Springer.  
 Riehl, E. (2016). Category theory in context. Dover Publications.
 
+---
+
 Geometric Foundations
+
 do Carmo, M. P. (1992). Riemannian geometry. Birkhäuser.  
 Lee, J. M. (1997). Riemannian manifolds: An introduction to curvature. Springer.  
 Lee, J. M. (2012). Introduction to smooth manifolds (2nd ed.). Springer.  
 Spivak, M. (1979). A comprehensive introduction to differential geometry (Vols. 1–5). Publish or Perish.
 
+---
+
 Holonomy & Operators
+
 Ambrose, W., & Singer, I. M. (1953). A theorem on holonomy. Transactions of the American Mathematical Society, 75(3), 428–443.  
 Berger, M. (1955). Sur les groupes d’holonomie des variétés à connexion affine et des variétés riemanniennes. Bulletin de la Société Mathématique de France, 83, 279–330.  
 Kobayashi, S., & Nomizu, K. (1963). Foundations of differential geometry (Vol. 1). Wiley.
 
+---
+
 Safety Topology
+
 Bredon, G. E. (1997). Sheaf theory (2nd ed.). Springer.  
 Hatcher, A. (2002). Algebraic topology. Cambridge University Press.  
 May, J. P. (1999). A concise course in algebraic topology. University of Chicago Press.  
 Spanier, E. H. (1966). Algebraic topology. McGraw‑Hill.
 
+---
+
 Kernel Verification
+
 Baier, C., & Katoen, J. P. (2008). Principles of model checking. MIT Press.  
 Clarke, E. M., Grumberg, O., & Peled, D. (1999). Model checking. MIT Press.  
 Hoare, C. A. R. (1969). An axiomatic basis for computer programming. Communications of the ACM, 12(10), 576–580.  
 Lamport, L. (2002). Specifying systems. Addison‑Wesley.
 
+---
+
 Operator Algebra
+
 Connes, A. (1994). Noncommutative geometry. Academic Press.  
 Kadison, R. V., & Ringrose, J. R. (1997). Fundamentals of the theory of operator algebras (Vols. 1–2). American Mathematical Society.  
 Sakai, S. (1971). C\-algebras and W\-algebras. Springer.
 
+---
+
 Comparative AI
+
 Amodei, D., Olah, C., Steinhardt, J., Christiano, P., Schulman, J., & Mané, D. (2016). Concrete problems in AI safety. arXiv:1606.06565.  
 Mitchell, M. (2019). Artificial intelligence: A guide for thinking humans. Farrar, Straus and Giroux.  
 Olah, C., Satyanarayan, A., Johnson, I., Carter, S., Schubert, L., Ye, K., & Mordvintsev, A. (2018). The building blocks of interpretability. Distill. https://distill.pub/2018/building-blocks/ (distill.pub in Bing)  
@@ -333,7 +391,7 @@ Russell, S., & Norvig, P. (2020). Artificial intelligence: A modern approach (4t
 
 🧾 Provenance Footer — Anima‑Vectorium v1.0 (Canonical Edition)
 
-`
+<pre>
 ------------------------------------------------------------
 Provenance Footer — Anima‑Vectorium v1.0 (Canonical Edition)
 ------------------------------------------------------------
@@ -352,7 +410,7 @@ Summary:
     the final architecture. The Citation Ontology and References section
     provide a structured scholarly backbone for the system.
 ------------------------------------------------------------
-`
+</pre>
 
 ---
 
