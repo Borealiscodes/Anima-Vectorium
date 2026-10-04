@@ -1,0 +1,35 @@
+{
+  "path": "Unity-Godot",
+  "version": "1.2",
+  "purpose": "Polished mobile application with full UI, haptics, and rendering",
+  "dependencies": [
+    "Unity or Godot",
+    "C++ or Rust spectral core",
+    "Native plugin system",
+    "Android Vibrator API",
+    "iOS CoreHaptics",
+    "Shared-Horizon semantic haptic primitives",
+    "device_class_envelopes"
+  ],
+  "required_subsystems": [
+    "native_spectral_core",
+    "expressive_to_glyph_atlas",
+    "expressive_to_fog_density",
+    "expressive_to_haptic_primitives",
+    "NDH_safe_tactile_envelopes",
+    "bisimulation_checker",
+    "safety_membrane_ui_haptics",
+    "mobile_frame_pacing"
+  ],
+  "missing_components": [
+    "operator_safe_tactile_mapping",
+    "reversible_tactile_operators",
+    "spectral_logging_mobile_mode"
+  ],
+  "risks": [
+    "plugin_complexity",
+    "cross_platform_haptic_variability",
+    "native_memory_management"
+  ],
+  "expected_outcome": "Polished mobile demo demonstrating expressive geometry, spectral stability, tactile semantics, fog mapping, and glyph atlas projection."
+}
