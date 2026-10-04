@@ -1,4 +1,5 @@
 import time
+import json
 from dashboard_controller import VectoriumController
 
 def run_dashboard(lib_path: str):
@@ -23,6 +24,17 @@ def run_dashboard(lib_path: str):
 
             print("Haptic Amp:", haptic["amplitude"])
             print("Haptic Freq:", haptic["frequency"])
+
+            # === Artifact 14: User Input Layer ===
+            user = input("Enter operator JSON (or press Enter to skip): ").strip()
+
+            if user:
+                try:
+                    op = json.loads(user)
+                    controller.inject_operator(op)
+                    print("Operator injected.")
+                except Exception as e:
+                    print("Invalid operator JSON:", e)
 
             time.sleep(0.1)
 
