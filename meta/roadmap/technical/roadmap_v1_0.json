@@ -1,0 +1,163 @@
+{
+  "version": "1.0",
+  "artifact": "Anima-Vectorium Roadmap",
+  "altitude": "Geometric-Expressive-Spectral",
+  "lineage": {
+    "fantasy_engine": {
+      "status": "integrated",
+      "role": "expressive-mechanical ancestor",
+      "contributions": [
+        "narrative holonomy",
+        "zone curvature",
+        "faction drift",
+        "operator-based abilities",
+        "world-state manifold"
+      ]
+    },
+    "rasa_manifold": {
+      "status": "integrated",
+      "basis_vectors": [
+        "shanta",
+        "shringara",
+        "vira",
+        "raudra",
+        "hasya",
+        "karuna",
+        "bhayanaka",
+        "bibhatsa",
+        "adbhuta"
+      ],
+      "dimension": 9
+    }
+  },
+  "runtime": {
+    "current_version": "3.1",
+    "issues_from_bash_audit": {
+      "shell_safety": [
+        "unbounded pipes",
+        "unsafe globbing",
+        "missing strict mode",
+        "race conditions in parallel ops",
+        "lack of expressive-state preconditions before execution"
+      ],
+      "runtime_drift": [
+        "expressive drift leaking into geometric ops",
+        "geometric drift leaking into system ops",
+        "missing drift clamps",
+        "missing drift normalization",
+        "missing homotopy collapse triggers for runtime errors"
+      ],
+      "operator_algebra": [
+        "boundedness checks missing",
+        "symmetry checks missing",
+        "continuity checks missing",
+        "rights-aligned constraints not enforced",
+        "operator composition not validated",
+        "unitary input not normalized"
+      ],
+      "filesystem_geometry": [
+        "directory curvature unvalidated",
+        "missing adjacency checks",
+        "projection functor constraints incomplete",
+        "kernel functor reversibility not guaranteed",
+        "manifold surface mapping incomplete"
+      ],
+      "safety_membrane": [
+        "homotopy collapse not wired to runtime errors",
+        "missing expressive-state guards",
+        "missing geometric-state guards",
+        "missing rights-aligned boundary enforcement"
+      ],
+      "bisimulation": [
+        "expressive ↔ geometric consistency not validated",
+        "missing bisimulation proofs for operator chains",
+        "missing bisimulation logs"
+      ],
+      "logging": [
+        "missing spectral logs",
+        "missing expressive-state logs",
+        "missing operator-trace logs",
+        "missing safety membrane activation logs",
+        "missing drift diagnostics"
+      ],
+      "isolation": [
+        "sandbox boundaries incomplete",
+        "namespace isolation missing",
+        "operator privilege boundaries undefined",
+        "missing manifold-level isolation constraints"
+      ]
+    }
+  },
+  "milestones": {
+    "m1_runtime_audit_consolidation": {
+      "artifact": "runtime_audit_v3.1.md",
+      "status": "pending",
+      "dependencies": []
+    },
+    "m2_runtime_kernel_corrections": {
+      "artifact": "runtime_kernel_v3.2",
+      "status": "pending",
+      "dependencies": ["m1_runtime_audit_consolidation"]
+    },
+    "m3_operator_algebra_validator": {
+      "artifact": "operator_algebra_validator.sh",
+      "status": "pending",
+      "dependencies": ["m2_runtime_kernel_corrections"]
+    },
+    "m4_safety_homotopy_integration": {
+      "artifact": "homotopy_collapse_trigger.sh",
+      "status": "pending",
+      "dependencies": ["m2_runtime_kernel_corrections"]
+    },
+    "m5_expressive_state_guard": {
+      "artifact": "expressive_state_guard.sh",
+      "status": "pending",
+      "dependencies": ["m2_runtime_kernel_corrections"]
+    },
+    "m6_bisimulation_checker": {
+      "artifact": "bisimulation_checker.sh",
+      "status": "pending",
+      "dependencies": ["m2_runtime_kernel_corrections"]
+    },
+    "m7_drift_clamp": {
+      "artifact": "drift_clamp.sh",
+      "status": "pending",
+      "dependencies": ["m2_runtime_kernel_corrections"]
+    },
+    "m8_filesystem_geometry_validator": {
+      "artifact": "filesystem_geometry_validator.sh",
+      "status": "pending",
+      "dependencies": ["m2_runtime_kernel_corrections"]
+    },
+    "m9_namespace_isolation_layer": {
+      "artifact": "namespace_isolation.sh",
+      "status": "pending",
+      "dependencies": ["m2_runtime_kernel_corrections"]
+    },
+    "m10_spectral_logging_layer": {
+      "artifact": "spectral_logging.sh",
+      "status": "pending",
+      "dependencies": ["m2_runtime_kernel_corrections"]
+    },
+    "m11_readme_v4_3": {
+      "artifact": "README_v4.3",
+      "status": "pending",
+      "dependencies": [
+        "m2_runtime_kernel_corrections",
+        "m3_operator_algebra_validator",
+        "m4_safety_homotopy_integration",
+        "m5_expressive_state_guard",
+        "m6_bisimulation_checker",
+        "m7_drift_clamp",
+        "m8_filesystem_geometry_validator",
+        "m9_namespace_isolation_layer",
+        "m10_spectral_logging_layer"
+      ]
+    }
+  },
+  "governance": {
+    "provenance_required": true,
+    "rights_alignment": true,
+    "safety_membrane": "active"
+  }
+}
