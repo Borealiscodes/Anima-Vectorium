@@ -75,3 +75,29 @@ pub extern "C" fn get_haptic_envelope_json(state_ptr: *mut VectoriumState) -> *m
     let packet = HapticEnvelopePacket::from_state(state);
     CString::new(serde_json::to_string(&packet).unwrap()).unwrap().into_raw()
 }
+
+//
+// ────────────────────────────────────────────────────────────────
+//   Artifact 13 — Operator Injection (Minimal Patch)
+// ────────────────────────────────────────────────────────────────
+//
+
+use crate::spectral::operator_algebra::Operator;
+
+#[no_mangle]
+pub extern "C" fn inject_operator_json(
+    state_ptr: *mut VectoriumState,
+    json: *const libc::c_char
+) {
+    if state_ptr.is_null() || json.is_null() {
+        return;
+    }
+
+    let state = unsafe { &mut *state_ptr };
+    let c_str = unsafe { std::ffi::CStr::from_ptr(json) };
+    let json_str = c_str.to_str().unwrap_or("");
+
+    if let Ok(op) = serde_json::from_str::<Operator>(json_str) {
+        state.inject_operator(op);
+    }
+}
