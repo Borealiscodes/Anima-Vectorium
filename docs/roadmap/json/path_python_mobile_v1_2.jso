@@ -1,0 +1,34 @@
+{
+  "path": "Python-Mobile",
+  "version": "1.2",
+  "purpose": "Rapid prototype of expressive-spectral runtime on mobile",
+  "dependencies": [
+    "Python 3.10+",
+    "BeeWare or Kivy",
+    "NumPy (mobile-safe)",
+    "Local IPC (TCP/WebSocket)",
+    "Lightweight UI layer"
+  ],
+  "required_subsystems": [
+    "9D Laplacian engine",
+    "drift_clamps",
+    "safety_membrane",
+    "expressive_to_glyph_projection",
+    "expressive_to_haptic_mapping",
+    "mobile_frame_pacing",
+    "mobile_ipc_loop"
+  ],
+  "missing_components": [
+    "full_bisimulation_checker",
+    "device_specific_haptic_envelopes",
+    "NDH_safe_tactile_primitives",
+    "spectral_logging_compression"
+  ],
+  "risks": [
+    "python_runtime_overhead",
+    "thermal_throttling",
+    "limited_haptic_support",
+    "restricted_distribution_channels"
+  ],
+  "expected_outcome": "Functional mobile demo proving expressive geometry, spectral operators, safety membrane, tactile mapping, and glyph projection."
+}
