@@ -28,6 +28,9 @@ pub struct RuntimeState {
     pub ndh_safe: bool,
 }
 
+// Alias for FFI compatibility
+pub type VectoriumState = RuntimeState;
+
 impl RuntimeState {
     pub fn new() -> Self {
         Self {
