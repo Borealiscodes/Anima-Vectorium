@@ -1,0 +1,63 @@
+{
+  "vectorium_roadmap_v3_0": {
+    "version": "3.0",
+    "status": "enhanced",
+    "altitude": "A7-A9",
+    "modules": {
+      "1_foundations": {
+        "1.1_expressive_manifold": "Formalize expressive curvature, drift, attractors, altitude layering.",
+        "1.2_geometric_manifold": "Define operator algebra, kernel flow, holonomy bounds, curvature diagnostics.",
+        "1.3_safety_membrane": "Integrate PRECL, HRD, rights-aligned constraints, non-activating boundaries."
+      },
+      "2_projection_system": {
+        "2.1_projection_functor": "Bounded non-surjective mapping E→G with altitude discipline.",
+        "2.2_reverse_projection": "G→E reconstruction with semantic dampening and drift caps.",
+        "2.3_meta_functor_layer": "Introduce membrane-aware projection routing for v3.1 compatibility."
+      },
+      "3_operator_architecture": {
+        "3.1_operator_inheritance": "Define operator lineage tree for expressive, geometric, spectral operators.",
+        "3.2_operator_constraints": "Non-recursive, drift-neutral, holonomy-stable operator rules.",
+        "3.3_operator_routing": "Altitude-dependent operator routing for Hologram v3.1."
+      },
+      "4_spectral_manifold": {
+        "4.1_spectral_geometry": "Formalize spectral manifold adjacency, eigen-structure constraints.",
+        "4.2_spectral_drift": "Define drift-neutral spectral transitions and curvature regulators.",
+        "4.3_spectral_matrix_backbone": "Integrate matrix backbone from Anima-Hologram v3.1."
+      },
+      "5_state_space": {
+        "5.1_state_space_definition": "Unified expressive-geometric-spectral state space.",
+        "5.2_transition_table": "Define reversible, bounded transitions across altitudes.",
+        "5.3_stability_envelopes": "Holonomy-stable envelopes for multi-layer transitions."
+      },
+      "6_hologram_v3_1_alignment": {
+        "6.1_expressive_alignment": "Map Hologram expressive surfaces to Vectorium E-manifold.",
+        "6.2_spectral_alignment": "Map Hologram spectral surfaces to spectral manifold.",
+        "6.3_geometric_alignment": "Map Hologram logic surfaces to G-manifold."
+      },
+      "7_EGST": {
+        "7.1_EGST_v1_0": "Base separation theorem.",
+        "7.2_EGST_XL": "Extension layer covering spectral manifolds, operator inheritance, meta-functor membranes.",
+        "7.3_EGST_integration": "Full integration with Hologram v3.1 and Vectorium A9."
+      },
+      "8_fantasy_engine": {
+        "8.1_expressive_layer": "Narrative curvature, lore topology, emotional altitude.",
+        "8.2_geometric_layer": "Simulation logic, physics, economy, NPC operators.",
+        "8.3_projection_layer": "Expressive→geometric mapping with safety homotopy.",
+        "8.4_kernel_flow": "World evolution, drift-bounded cycles, holonomy-stable dynamics."
+      },
+      "9_documentation_suite": {
+        "9.1_preprint_structure": "Formal preprint layout for Vectorium v3.0.",
+        "9.2_governance_docs": "Rights-aligned governance documentation.",
+        "9.3_repository_structure": "Folder hierarchy, file paths, commit standards."
+      }
+    },
+    "deliverables": {
+      "roadmap_v3_0_json": "This file.",
+      "EGST_v1_0": "Complete.",
+      "EGST_XL": "Pending.",
+      "Hologram_v3_1_alignment": "In-progress.",
+      "Vectorium_A9": "Pending formalization.",
+      "Fantasy_Engine_spec": "Pending."
+    }
+  }
+}
