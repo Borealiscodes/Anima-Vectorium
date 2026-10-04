@@ -1,114 +1,124 @@
 {
-  "visual_grammar_version": "1.0",
-  "repo": "anima-vectorium",
-  "layers": {
+  "visual_grammar_version": "2.0",
+  "repo": "Anima-Vectorium",
+  "altitudes": {
     "geometric": {
-      "license": "GVL-1.1",
+      "glyph": "🟦",
       "color": "#3A7FFF",
-      "glyph": "⧉",
-      "description": "Holonomy, curvature, drift, stability, multimodal geometry.",
+      "license": "GVL-1.1",
+      "description": "Holonomy, curvature, drift, stability, diagnostics.",
+      "operators": {
+        "holonomy": "↻",
+        "curvature": "∿",
+        "drift": "⇢",
+        "stability": "◎",
+        "diagnostics": "🔍"
+      },
       "folders": [
         "vectorium/core",
-        "vectorium/geometry",
-        "vectorium/diagnostics",
-        "vectorium/safety",
-        "vectorium/utils"
+        "vectorium/diagnostics"
+      ]
+    },
+    "safety": {
+      "glyph": "🟧",
+      "color": "#FF8C00",
+      "license": "GVL-1.1 + Stell Non-Commercial",
+      "description": "Rights-aligned feasibility envelopes.",
+      "operators": {
+        "membrane": "⚖️",
+        "validator": "🛡️"
+      },
+      "folders": [
+        "vectorium/safety"
+      ]
+    },
+    "infrastructure": {
+      "glyph": "⬢",
+      "color": "#7B61FF",
+      "license": "GVL-1.1 + Stell Non-Commercial",
+      "description": "Runtime, API, simulator, glyph mapping.",
+      "operators": {
+        "kernel": "🧩",
+        "api": "🔌",
+        "simulator": "🌀",
+        "glyph_map": "🏷️"
+      },
+      "folders": [
+        "vectorium/kernel.py",
+        "vectorium/api.py",
+        "vectorium/simulator.py",
+        "vectorium/grammar"
       ]
     },
     "expressive": {
-      "license": "Stell-NonCommercial",
+      "glyph": "🟥",
       "color": "#FF6A6A",
-      "glyph": "✶",
-      "description": "Anima-derived expressive operators and lineage.",
+      "license": "Stell Non-Commercial",
+      "description": "Expressive states, lineage, immutable vault.",
+      "operators": {
+        "anima_core": "💠",
+        "persistence": "🗄️",
+        "read_vault": "🔒"
+      },
       "folders": [
-        "anima_hologram_v3.1",
-        "anima_classic_archive"
+        "anima/anima_core.py",
+        "anima/persistence.py",
+        "anima/read_vault.py"
       ]
     },
-    "boundary": {
-      "color": "#FFD700",
-      "glyph": "⧀⧁",
-      "description": "Membrane separating geometric and expressive code families.",
-      "rules": [
-        "No geometric code may import expressive modules.",
-        "Expressive modules may not be relicensed.",
-        "License contamination prohibited."
+    "bridge": {
+      "glyph": "🟫",
+      "color": "#C49A6C",
+      "license": "Stell Non-Commercial",
+      "description": "Expressive → geometric projection and kernel handoff.",
+      "operators": {
+        "bridge_readonly": "🪢",
+        "bridge_kernel": "🧷"
+      },
+      "folders": [
+        "bridge/bridge_readonly.py",
+        "bridge/bridge_kernel.py"
       ]
-    }
-  },
-  "operators": {
-    "holonomy": {
-      "glyph": "↻",
+    },
+    "documentation": {
+      "glyph": "📘",
       "color": "#4A90E2",
-      "description": "Measures loop displacement across expressive manifold."
-    },
-    "curvature": {
-      "glyph": "∿",
-      "color": "#7B61FF",
-      "description": "Quantifies geometric bending of state trajectories."
-    },
-    "drift": {
-      "glyph": "⇢",
-      "color": "#00C2A8",
-      "description": "Tracks directional deviation across manifold flow."
-    },
-    "stability": {
-      "glyph": "◎",
-      "color": "#FFC300",
-      "description": "Evaluates boundedness and energy feasibility."
-    },
-    "rights_aligned": {
-      "glyph": "⚖",
-      "color": "#FF8C00",
-      "description": "Agency-preserving metric constraints."
+      "license": "GVL-1.1 + Stell Non-Commercial",
+      "description": "Architecture, altitude reference, diagrams.",
+      "folders": [
+        "docs/architecture_overview.md",
+        "docs/altitudes.md"
+      ]
     }
   },
   "flows": {
-    "expressive_flow": {
-      "glyph": "➝",
+    "expressive_to_geometric_projection": {
+      "glyph": "🪢",
       "color": "#FF6A6A",
-      "description": "Non-geometric expressive transitions."
+      "description": "Read-only expressive → geometric projection via bridge_readonly."
     },
-    "geometric_flow": {
-      "glyph": "➜",
-      "color": "#3A7FFF",
-      "description": "Holonomy-aware geometric transitions."
+    "kernel_execution_flow": {
+      "glyph": "🧩",
+      "color": "#7B61FF",
+      "description": "Kernel orchestrates holonomy, curvature, drift, stability."
     },
-    "reversible_transition": {
-      "glyph": "⇄",
-      "color": "#00C2A8",
-      "description": "State transitions preserving manifold integrity."
-    }
-  },
-  "safety": {
-    "dual_use_restriction": {
-      "glyph": "⛔",
-      "color": "#D0021B",
-      "description": "Prohibits harmful, coercive, or weaponized use."
-    },
-    "non_weaponization": {
-      "glyph": "✋",
-      "color": "#D0021B",
-      "description": "Blocks integration into kinetic or targeting systems."
-    },
-    "agency_preservation": {
-      "glyph": "⚖",
+    "safety_gating": {
+      "glyph": "🛡️",
       "color": "#FF8C00",
-      "description": "Ensures non-coercive reasoning pathways."
+      "description": "Membrane + validator enforce feasibility envelopes."
+    },
+    "simulator_traversal": {
+      "glyph": "🌀",
+      "color": "#7B61FF",
+      "description": "Stepwise manifold traversal using geometric operators."
     }
   },
-  "altitudes": {
-    "expressive_altitude": {
-      "glyph": "✶",
-      "description": "Symbolic, narrative, phenomenological layer."
+  "governance": {
+    "licenses": {
+      "geometry": "LICENSE-GEOMETRY.txt",
+      "anima": "LICENSE-ANIMA.txt",
+      "dual": "LICENSE.md"
     },
-    "geometric_altitude": {
-      "glyph": "⧉",
-      "description": "Holonomy, curvature, drift, stability layer."
-    },
-    "cognitive_architecture_altitude": {
-      "glyph": "⟟",
-      "description": "NDH-compatible manifold architecture layer."
-    }
+    "roadmap": "roadmap/vectorium_roadmap_v2.json"
   }
 }
