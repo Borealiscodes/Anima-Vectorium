@@ -1,0 +1,186 @@
+{
+  "version": "1.1",
+  "artifact": "Anima-Vectorium Roadmap",
+  "altitude": "Geometric-Expressive-Spectral",
+
+  "priority_weights": {
+    "critical": 5,
+    "high": 4,
+    "medium": 3,
+    "low": 2,
+    "optional": 1
+  },
+
+  "risk_scoring": {
+    "shell_safety": "high",
+    "runtime_drift": "critical",
+    "operator_algebra": "high",
+    "filesystem_geometry": "medium",
+    "safety_membrane": "critical",
+    "bisimulation": "high",
+    "logging": "medium",
+    "isolation": "high"
+  },
+
+  "timelines": {
+    "m1_runtime_audit_consolidation": "2026-Q4",
+    "m2_runtime_kernel_corrections": "2027-Q1",
+    "m3_operator_algebra_validator": "2027-Q1",
+    "m4_safety_homotopy_integration": "2027-Q1",
+    "m5_expressive_state_guard": "2027-Q1",
+    "m6_bisimulation_checker": "2027-Q2",
+    "m7_drift_clamp": "2027-Q2",
+    "m8_filesystem_geometry_validator": "2027-Q2",
+    "m9_namespace_isolation_layer": "2027-Q2",
+    "m10_spectral_logging_layer": "2027-Q3",
+    "m11_readme_v4_3": "2027-Q3"
+  },
+
+  "dependency_graph": {
+    "nodes": [
+      "m1_runtime_audit_consolidation",
+      "m2_runtime_kernel_corrections",
+      "m3_operator_algebra_validator",
+      "m4_safety_homotopy_integration",
+      "m5_expressive_state_guard",
+      "m6_bisimulation_checker",
+      "m7_drift_clamp",
+      "m8_filesystem_geometry_validator",
+      "m9_namespace_isolation_layer",
+      "m10_spectral_logging_layer",
+      "m11_readme_v4_3"
+    ],
+    "edges": [
+      ["m1_runtime_audit_consolidation", "m2_runtime_kernel_corrections"],
+      ["m2_runtime_kernel_corrections", "m3_operator_algebra_validator"],
+      ["m2_runtime_kernel_corrections", "m4_safety_homotopy_integration"],
+      ["m2_runtime_kernel_corrections", "m5_expressive_state_guard"],
+      ["m2_runtime_kernel_corrections", "m6_bisimulation_checker"],
+      ["m2_runtime_kernel_corrections", "m7_drift_clamp"],
+      ["m2_runtime_kernel_corrections", "m8_filesystem_geometry_validator"],
+      ["m2_runtime_kernel_corrections", "m9_namespace_isolation_layer"],
+      ["m2_runtime_kernel_corrections", "m10_spectral_logging_layer"],
+      [
+        "m3_operator_algebra_validator",
+        "m11_readme_v4_3"
+      ],
+      [
+        "m4_safety_homotopy_integration",
+        "m11_readme_v4_3"
+      ],
+      [
+        "m5_expressive_state_guard",
+        "m11_readme_v4_3"
+      ],
+      [
+        "m6_bisimulation_checker",
+        "m11_readme_v4_3"
+      ],
+      [
+        "m7_drift_clamp",
+        "m11_readme_v4_3"
+      ],
+      [
+        "m8_filesystem_geometry_validator",
+        "m11_readme_v4_3"
+      ],
+      [
+        "m9_namespace_isolation_layer",
+        "m11_readme_v4_3"
+      ],
+      [
+        "m10_spectral_logging_layer",
+        "m11_readme_v4_3"
+      ]
+    ]
+  },
+
+  "lineage": {
+    "fantasy_engine": {
+      "status": "integrated",
+      "role": "expressive-mechanical ancestor",
+      "contributions": [
+        "narrative holonomy",
+        "zone curvature",
+        "faction drift",
+        "operator-based abilities",
+        "world-state manifold"
+      ],
+      "subtasks": [
+        {
+          "id": "fe1_zone_curvature_map",
+          "description": "Map zone curvature into geometric manifold surfaces",
+          "priority": 4,
+          "risk": "medium",
+          "timeline": "2027-Q1"
+        },
+        {
+          "id": "fe2_faction_drift_operator",
+          "description": "Formalize faction drift as expressive drift operator",
+          "priority": 5,
+          "risk": "high",
+          "timeline": "2027-Q1"
+        },
+        {
+          "id": "fe3_ability_operator_algebra",
+          "description": "Translate ability mechanics into operator algebra",
+          "priority": 4,
+          "risk": "medium",
+          "timeline": "2027-Q2"
+        },
+        {
+          "id": "fe4_world_state_holonomy",
+          "description": "Integrate world-state holonomy loops into spectral physics",
+          "priority": 5,
+          "risk": "high",
+          "timeline": "2027-Q2"
+        }
+      ]
+    },
+
+    "rasa_manifold": {
+      "status": "integrated",
+      "basis_vectors": [
+        "shanta",
+        "shringara",
+        "vira",
+        "raudra",
+        "hasya",
+        "karuna",
+        "bhayanaka",
+        "bibhatsa",
+        "adbhuta"
+      ],
+      "dimension": 9,
+      "subtasks": [
+        {
+          "id": "rm1_basis_vector_normalization",
+          "description": "Normalize expressive basis vectors for spectral stability",
+          "priority": 5,
+          "risk": "high",
+          "timeline": "2027-Q1"
+        },
+        {
+          "id": "rm2_rasa_drift_model",
+          "description": "Model expressive drift across rasa manifold dimensions",
+          "priority": 4,
+          "risk": "medium",
+          "timeline": "2027-Q2"
+        },
+        {
+          "id": "rm3_rasa_projection_functor",
+          "description": "Define projection functor from expressive manifold to geometric manifold",
+          "priority": 5,
+          "risk": "high",
+          "timeline": "2027-Q2"
+        }
+      ]
+    }
+  },
+
+  "governance": {
+    "provenance_required": true,
+    "rights_alignment": true,
+    "safety_membrane": "active"
+  }
+}
