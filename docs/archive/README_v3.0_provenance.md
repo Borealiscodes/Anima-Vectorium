@@ -220,3 +220,35 @@ historical accuracy and traceability.
 
 ---
 
+🏷️ Provenance Footer
+
+`
+──────────────────────────────────────────────────────────────────────────────
+ARCHIVAL PROVENANCE — README v3.0
+Artifact: README.md (v3.0)
+Archive Path: /docs/archive/READMEv3.0provenance.md
+Repository: https://github.com/Borealiscodes/Anima-Vectorium
+Author: Borealis S. Hedling
+Location: Dublin, Ireland
+Timestamp: 2026-10-04T17:09 IST
+
+Altitude: 🟪 Governance & Orientation Layer
+Glyph: 📘
+License Family: Dual (GVL-1.1 + Stell Non-Commercial)
+
+Description:
+README v3.0 served as the primary contributor-facing surface during the expressive-
+geometric era of Anima-Vectorium. It introduced the 9D expressive manifold, module
+layout, and early cognitive-engine framing prior to the formalization of the v3.0
+Mathématique preprint and the v3.0 Expressive Clarity Edition.
+
+Integrity Statement:
+README v3.0 is archived as an immutable historical artifact. It reflects the repository’s
+state prior to the consolidation of the runtime engine, the introduction of the v3.0
+mathematical core, and the expressive clarity edition. This artifact is preserved within
+the Anima-Vectorium governance spine.
+──────────────────────────────────────────────────────────────────────────────
+`
+
+---
+
