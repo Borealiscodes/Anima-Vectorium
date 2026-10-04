@@ -1,36 +1,31 @@
-import ctypes
-import json
 import time
-import os
+from dashboard_controller import VectoriumController
 
-# Load the shared library
-lib_path = os.path.abspath("./target/debug/libvectorium.so")
-vectorium = ctypes.CDLL(lib_path)
+def run_dashboard(lib_path: str):
+    controller = VectoriumController(lib_path)
 
-# FFI signatures
-vectorium.initialize_vectorium.restype = None
-vectorium.tick_vectorium.restype = None
+    try:
+        while True:
+            controller.tick()
 
-vectorium.get_expressive_state_json.restype = ctypes.c_char_p
-vectorium.get_telemetry_json.restype = ctypes.c_char_p
-vectorium.get_haptic_envelope_json.restype = ctypes.c_char_p
+            expressive = controller.get_expressive_packet()
+            telemetry = controller.get_telemetry_packet()
+            haptic = controller.get_haptic_packet()
 
-# Initialize runtime
-vectorium.initialize_vectorium()
+            print("\n=== Vectorium Dashboard ===")
+            print("Timestamp:", expressive["timestamp_ms"])
+            print("Stability:", expressive["stability_score"])
+            print("Fog Density:", expressive["fog_density"])
+            print("Glyph Hint:", expressive["glyph_hint"])
 
-print("Vectorium runtime initialized.\n")
+            print("Power (mW):", telemetry["power_mw"])
+            print("Spectral Variance:", telemetry["spectral_variance"])
 
-# Main polling loop
-while True:
-    vectorium.tick_vectorium()
+            print("Haptic Amp:", haptic["amplitude"])
+            print("Haptic Freq:", haptic["frequency"])
 
-    state_json = vectorium.get_expressive_state_json().decode("utf-8")
-    telemetry_json = vectorium.get_telemetry_json().decode("utf-8")
-    haptics_json = vectorium.get_haptic_envelope_json().decode("utf-8")
+            time.sleep(0.1)
 
-    print("Expressive State:", state_json)
-    print("Telemetry:", telemetry_json)
-    print("Haptics:", haptics_json)
-    print("-" * 40)
-
-    time.sleep(0.1)
+    except KeyboardInterrupt:
+        print("Shutting down Vectorium...")
+        controller.shutdown()
