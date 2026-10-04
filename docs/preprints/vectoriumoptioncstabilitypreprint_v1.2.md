@@ -292,15 +292,16 @@ The recommended mobile glyph set provides:
 - future‑proof alignment  
 
 ---
+
 `
 ──────────────────────────────────────────────────────────────────────────────
 PROVENANCE — Option C Stability Preprint v1.2
 Artifact: docs/preprints/vectoriumoptioncstabilitypreprint_v1.2.md
-Repository: https://github.com/Borealiscodes/Spectral-Base-Runtime
+Repository: https://github.com/Borealiscodes/Anima-Vectorium
 Author: Borealis S. Hedling
 Compiler: Microsoft Copilot
 Location: Dublin, Ireland
-Timestamp: 2026-10-04T19:34 IST
+Timestamp: 2026-10-04T19:42 IST
 
 Altitude: Spectral Geometry • Thermodynamic Alignment • Ethical Runtime Design
 Glyph: 🦾✦
@@ -315,4 +316,6 @@ analysis of execution paths and integrates dashboard projection semantics to
 ensure a governed, mobile-ready, research-grade runtime.
 ──────────────────────────────────────────────────────────────────────────────
 `
+
+---
 
