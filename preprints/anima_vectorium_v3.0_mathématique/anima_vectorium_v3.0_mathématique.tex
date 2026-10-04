@@ -1,0 +1,223 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Anima-Vectorium v3.0 Mathématique \\ \large Runtime-Aligned Formal Core}
+\author{Borealis S. Hedling}
+\date{04 October 2026}
+
+\begin{document}
+
+\maketitle
+
+\section*{Metadata}
+\begin{itemize}
+    \item Version: 3.0
+    \item Classification: Anima-Vectorium (Mathematical Layer)
+    \item Context: Formal mathematical unification of the 9D runtime engine, Laplacian topology,
+          safety membranes, trace-class invariants, and operator algebra.
+\end{itemize}
+
+\section{9D State Space Definition}
+
+Define the expressive--geometric state space:
+\[
+\mathcal{H} = \mathbb{C}^9.
+\]
+
+Let the canonical basis be:
+\[
+e_0, e_1, \dots, e_8.
+\]
+
+Define the rasa-manifold mapping:
+\[
+\{ \text{shanta}, \text{shringara}, \text{vira}, \text{karuna}, \text{raudra},
+   \text{hasya}, \text{bhaya}, \text{bibhatsa}, \text{adbhuta} \}.
+\]
+
+The system state is:
+\[
+\psi(t) \in \mathcal{H},
+\]
+with initial condition:
+\[
+\psi(0) = e_0.
+\]
+
+\section{Canonical 9x9 Laplacian}
+
+Define the canonical Laplacian:
+\[
+L_{ij} =
+\begin{cases}
+8, & i = j, \\
+-1, & i \neq j.
+\end{cases}
+\]
+
+This is the symmetric, fully-connected Laplacian used in the runtime engine.
+
+\section{Topology-Derived Laplacian}
+
+Given adjacency matrix $A$:
+\[
+A_{ij} =
+\begin{cases}
+1, & (i,j) \in E, \\
+0, & \text{otherwise},
+\end{cases}
+\]
+
+Define degree matrix:
+\[
+D_{ii} = \sum_j A_{ij}.
+\]
+
+Then the Laplacian is:
+\[
+L = D - A.
+\]
+
+\section{Safety Membrane: Gradient Firewall}
+
+Define the continuity derivative:
+\[
+\Delta(t) = \max_i \left| \frac{\partial}{\partial x} \Re(\psi_i(t)) \right|.
+\]
+
+Safety threshold:
+\[
+\Delta(t) > \tau \quad \Rightarrow \quad \psi(t) = e_0.
+\]
+
+Runtime default:
+\[
+\tau = 0.71.
+\]
+
+\section{Diffusion Operator}
+
+Discrete diffusion step:
+\[
+\psi(t + \Delta t) = \psi(t) + \Delta t \cdot (-L \psi(t)),
+\]
+with:
+\[
+\Delta t = 0.05.
+\]
+
+\section{Unitary Input Operator}
+
+Define pressure vector:
+\[
+p \in \mathbb{R}^9,
+\]
+clipped to:
+\[
+p_i \in [-\pi, \pi].
+\]
+
+Define unitary operator:
+\[
+U(p)_i = e^{i p_i}.
+\]
+
+State update:
+\[
+\psi(t + \Delta t) = \psi(t) + \Delta t \cdot (-L\psi(t) + U(p)).
+\]
+
+\section{Trace-Class Normalization}
+
+Define trace mass:
+\[
+M(t) = \sum_{i=0}^8 |\psi_i(t)|.
+\]
+
+Normalization operator:
+\[
+\psi(t) \leftarrow \frac{\psi(t)}{M(t)}.
+\]
+
+\section{Mobile Translation Layer (0.35W)}
+
+Define health metric:
+\[
+h(t) = \Re(\psi_0(t)) \cdot 100 + \Re(\psi_3(t)) \cdot 50,
+\]
+clamped to:
+\[
+h(t) \in [0, 100].
+\]
+
+Environmental fog:
+\[
+f(t) = \min(1, \max(0, \Re(\psi_6(t)))).
+\]
+
+Dominant glyph index:
+\[
+k = \arg\max_i \Re(\psi_i(t)).
+\]
+
+\section{Haptics Operator}
+
+Let:
+\[
+v(t) = \Re(\psi(t)).
+\]
+
+Variance:
+\[
+\sigma^2 = \mathrm{Var}(v(t)).
+\]
+
+Dominant intensity:
+\[
+\alpha = \max_i v_i(t).
+\]
+
+Define haptic operator:
+\[
+\mathcal{H}(\psi, \Delta) =
+\begin{cases}
+\text{DOUBLE\_BUZZ\_HIGH\_ALERT}, & \Delta > \tau, \\
+\text{AMBIENT\_WAVE\_HUM}, & \alpha > 0.40, \\
+\text{STANDBY\_STASIS}, & \text{otherwise}.
+\end{cases}
+\]
+
+\section{Invariance Proofs (Skeleton)}
+
+\subsection{Trace Invariance}
+Show:
+\[
+M(t + \Delta t) = 1.
+\]
+
+\subsection{Laplacian Symmetry}
+Show:
+\[
+L = L^\top.
+\]
+
+\subsection{Safety Membrane Correctness}
+Show:
+\[
+\Delta(t) > \tau \Rightarrow \psi(t) = e_0.
+\]
+
+\subsection{Boundedness of Unitary Input}
+Show:
+\[
+|U(p)_i| = 1.
+\]
+
+\section{Runtime Alignment Statement}
+
+This v3.0 mathematical core is aligned with the runtime engine, topology loader,
+haptics manager, safety membrane audit, trace-class invariants, and CI automation pipeline.
+
+\end{document}
