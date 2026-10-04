@@ -1,4 +1,6 @@
-#[derive(Debug, Clone, Copy)]
+use serde::{Serialize, Deserialize};
+
+#[derive(Debug, Clone, Copy, Serialize, Deserialize)]
 pub enum DeviceClass {
     Mobile = 0,
     Controller = 1,
