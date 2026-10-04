@@ -1,0 +1,33 @@
+{
+  "path": "Rust-Core",
+  "version": "1.2",
+  "purpose": "Research-grade thermodynamically aligned spectral core",
+  "dependencies": [
+    "Rust spectral core",
+    "Rust mobile bindings",
+    "device_class_haptic_envelopes",
+    "NDH_safe_tactile_primitives",
+    "bisimulation_checker",
+    "drift_clamps",
+    "spectral_logging_compression"
+  ],
+  "required_subsystems": [
+    "rust_laplacian_engine",
+    "operator_algebra",
+    "safety_membrane",
+    "expressive_spectral_bisimulation",
+    "reversible_tactile_operators",
+    "thermodynamic_envelope_035W"
+  ],
+  "missing_components": [
+    "full_mobile_ui_layer",
+    "glyph_atlas_integration",
+    "fog_environment_projection"
+  ],
+  "risks": [
+    "highest_engineering_complexity",
+    "custom_ui_requirements",
+    "deep_haptic_integration"
+  ],
+  "expected_outcome": "Research-grade spectral engine proving thermodynamic alignment, ethical alignment, reversible operators, and bounded expressive geometry."
+}
