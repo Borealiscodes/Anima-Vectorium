@@ -1,8 +1,11 @@
+pub mod packet_serialization;
+pub mod bindings;
+
 use crate::runtime::handle::RuntimeHandle;
 use crate::spectral::operator_algebra::Operator;
-use crate::ffi::packets::{
+use crate::ffi::packet_serialization::{
     ExpressiveStatePacket,
-    TelemetryPacket,
+    ThermodynamicTelemetry,
     HapticEnvelopePacket,
 };
 
@@ -54,7 +57,7 @@ pub extern "C" fn get_expressive_state_json() -> *mut libc::c_char {
 pub extern "C" fn get_telemetry_json() -> *mut libc::c_char {
     unsafe {
         if let Some(handle) = &RUNTIME {
-            let packet = TelemetryPacket::from_state(handle.get_state());
+            let packet = ThermodynamicTelemetry::from_state(handle.get_state());
             let json = serde_json::to_string(&packet).unwrap();
             return std::ffi::CString::new(json).unwrap().into_raw();
         }
@@ -72,4 +75,4 @@ pub extern "C" fn get_haptic_envelope_json() -> *mut libc::c_char {
         }
     }
     std::ffi::CString::new("{}").unwrap().into_raw()
-              }
+}
