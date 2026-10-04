@@ -1,5 +1,5 @@
-use super::device_class::DeviceClass;
-use super::envelope::HapticEnvelope;
+use crate::haptics::envelope::DeviceClass;
+use crate::haptics::device_class::HapticEnvelope;
 
 pub fn enforce_ndh_safety(envelope: &mut HapticEnvelope, class: DeviceClass) {
     let max_amp = class.max_amplitude();
