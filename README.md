@@ -56,43 +56,48 @@ Infrastructure altitude is new in v2.0 — it represents the operational backbon
 
 📁 2. Repository Layout (Emoji‑Enhanced, v2.0)
 
-(ASCII tree removed — this is the authoritative layout)
+🟦 vectorium/ — Geometric Engine (GVL‑1.1)*  
+  ↻ core/ — holonomy, curvature, drift, stability  
+  🔍 diagnostics/ — telemetry + envelopes  
+  ⚖️ safety/ — rights‑aligned geometry + validator  
+  🏷️ grammar/ — glyph → operator mapping  
+  🧩 kernel.py — runtime orchestrator  
+  🔌 api.py — unified API layer  
+  🌀 simulator.py — manifold traversal engine
 
- 🟦 vectorium/ — Geometric Engine (GVL‑1.1)*  
-  * ↻ core/ — holonomy, curvature, drift, stability  
-  * 🔍 diagnostics/ — telemetry + envelopes  
-  * ⚖️ safety/ — rights‑aligned geometry + validator  
-  * 🏷️ grammar/ — glyph → operator mapping  
-  * 🧩 kernel.py — runtime orchestrator  
-  * 🔌 api.py — unified API layer  
-  * 🌀 simulator.py — manifold traversal engine
+🟥 anima/ — Expressive Lineage (Stell Non‑Commercial)*  
+  💠 anima_core.py  
+  🗄️ persistence.py  
+  🔒 read_vault.py  
 
- 🟥 anima/ — Expressive Lineage (Stell Non‑Commercial)*  
-  * ✶ anima_core.py  
-  * 🗄️ persistence.py  
-  * 🔷 read_vault.py  
-  * 🪞 bridge_readonly.py
+🟫 bridge/ — Expressive → Geometric Interface (Stell Non‑Commercial)*  
+  🪢 bridge_readonly.py  
+  🧷 bridge_kernel.py
 
- 🗺️ diagrams/ — Visual Grammar + Architecture Maps*  
-  * 🎨 visual-grammar/  
-    * 🏷️ animavectoriumvisual_grammar.json
+🗺️ diagrams/ — Visual Grammar + Architecture Maps*  
+  🎨 visual-grammar/  
+    🏷️ animavectoriumvisual_grammar.json  
+    📘 visual-grammar-overview.md  
+    📘 visual-grammar-map-spec.md
 
- 📘 examples/ — Jupyter demos + API usage*  
-  * 📓 vectorium_demo.ipynb  
-  * 🧪 vectorium_api.py
+📘 examples/ — Jupyter demos + API usage*  
+  📓 vectorium_demo.ipynb  
+  🧪 vectorium_api.py
 
- 🟪 docs/ — Documentation + Archive*  
-  * 🗄️ archive/  
-    * 📘 README_v1.0.md
+🟪 docs/ — Documentation + Archive*  
+  📘 architecture_overview.md  
+  📘 altitudes.md  
+  🗄️ archive/  
+    📘 README_v1.0.md
 
- 🟪 roadmap/ — Governed Artifact Spine*  
-  * 🧭 vectoriumroadmapv2.json
+🟪 roadmap/ — Governed Artifact Spine*  
+  🧭 vectorium_roadmapv2.json
 
- 🟧 meta/ — Licenses + Governance*  
-  * ⚖️ LICENSE.md — dual‑license boundary  
-  * 🟦 LICENSE-GEOMETRY.txt  
-  * 🟥 LICENSE-ANIMA.txt
-
+🟧 meta/ — Licenses + Governance*  
+  ⚖️ LICENSE.md — dual‑license boundary  
+  🟦 LICENSE-GEOMETRY.txt  
+  🟥 LICENSE-ANIMA.txt
+  
 ---
 
 🌀 3. Core Concepts (v2.0)
