@@ -1,0 +1,240 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{bm}
+
+\geometry{margin=1in}
+
+\title{Anima-Vectorium v4.0: Runtime-Aligned Mathematical Backbone for the Spectral Core}
+\author{Borealis S. Hedling}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This document formalizes the mathematical backbone of the Anima-Vectorium
+architecture in its v4.0 form. Unlike v3.0 Mathématique, which provided a
+conceptual geometric foundation, v4.0 introduces runtime-aligned operator
+definitions, a computational Laplacian suitable for mobile thermodynamic
+constraints, membrane invariants compatible with reversible operator algebra,
+and a bisimulation framework linking expressive and spectral states. This
+version is designed explicitly to support Option C (Rust Core + Mobile
+Bindings), ensuring deterministic execution, bounded expressive dynamics, and
+thermodynamically safe operator injection. Academic references are included to
+support future expressive-clarity versions.
+\end{abstract}
+
+\section{Introduction}
+
+Anima-Vectorium models expressive cognition as a geometric dynamical system
+evolving on a manifold $M$ equipped with a connection $\nabla$, a Laplacian
+operator $\Delta$, and a set of reversible operators $\mathcal{O}$. The v4.0
+architecture aligns these mathematical objects with the constraints of a
+mobile runtime, including thermodynamic envelopes, bounded drift, and
+membrane-governed operator injection.
+
+This version introduces:
+\begin{itemize}
+    \item A runtime-aligned Laplacian $\Delta_R$ suitable for SIMD execution.
+    \item A 9-dimensional expressive manifold $M = \mathbb{R}^9$ with bounded
+    norm.
+    \item A reversible operator algebra $\mathcal{O}$ with membrane invariants.
+    \item A drift clamp defined via rotational stability constraints.
+    \item A bisimulation relation linking expressive and spectral states.
+    \item A thermodynamic envelope defined via power budget and spectral variance.
+\end{itemize}
+
+\section{Expressive Manifold}
+
+We define the expressive manifold as:
+\[
+M = \mathbb{R}^9
+\]
+with expressive state:
+\[
+\bm{e} \in M, \qquad \|\bm{e}\|_2 \leq 1.
+\]
+
+The bounded norm ensures:
+\begin{itemize}
+    \item stability under mobile thermodynamic constraints,
+    \item compatibility with glyph projection,
+    \item reversible operator application.
+\end{itemize}
+
+\section{Runtime-Aligned Laplacian}
+
+We define the runtime Laplacian $\Delta_R$ as:
+\[
+\Delta_R f = \sum_{i=1}^9 w_i \frac{\partial^2 f}{\partial x_i^2}
+\]
+where $w_i$ are thermodynamic weights satisfying:
+\[
+0 < w_i \leq 1, \qquad \sum_i w_i = 1.
+\]
+
+This form is chosen because:
+\begin{itemize}
+    \item it is SIMD-friendly,
+    \item it is compatible with mobile power envelopes,
+    \item it preserves spectral stability.
+\end{itemize}
+
+\section{Operator Algebra}
+
+Define operator algebra:
+\[
+\mathcal{O} = \{ O : M \rightarrow M \mid O \text{ reversible},\; O \text{ bounded} \}.
+\]
+
+Each operator $O$ satisfies:
+\[
+\|O(\bm{e})\|_2 \leq 1,
+\]
+and reversibility:
+\[
+O^{-1} \in \mathcal{O}.
+\]
+
+Operators are injected via packets:
+\[
+O(\bm{e}) = \bm{e} + \alpha \bm{d},
+\]
+where $\alpha$ is magnitude and $\bm{d}$ is direction.
+
+\section{Membrane Invariants}
+
+Define membrane state:
+\[
+m \in \{0,1,2,3\}
+\]
+corresponding to neutral, active, clamp, reset.
+
+Membrane invariants:
+\[
+m = 2 \Rightarrow O(\bm{e}) = \bm{e}
+\]
+\[
+m = 3 \Rightarrow \bm{e} = \bm{e}_0
+\]
+
+Clamp threshold:
+\[
+\alpha > \alpha_{\max} \Rightarrow m = 2.
+\]
+
+Reset threshold:
+\[
+\|\bm{e}\|_2 > 1 \Rightarrow m = 3.
+\]
+
+\section{Drift Clamp}
+
+Define drift vector:
+\[
+\bm{d}_{\text{drift}} = \nabla \bm{e}.
+\]
+
+Clamp condition:
+\[
+\|\bm{d}_{\text{drift}}\|_2 > \delta_{\max} \Rightarrow m = 2.
+\]
+
+Rotational stability:
+\[
+\theta = \arccos\left( \frac{\bm{e} \cdot \bm{d}_{\text{drift}}}{\|\bm{e}\|\|\bm{d}_{\text{drift}}\|} \right)
+\]
+\[
+\theta > \theta_{\max} \Rightarrow m = 2.
+\]
+
+\section{Thermodynamic Envelope}
+
+Define power envelope:
+\[
+P = \sum_{i=1}^9 w_i \left( \frac{\partial^2 f}{\partial x_i^2} \right)^2.
+\]
+
+Envelope condition:
+\[
+P \leq P_{\max}.
+\]
+
+Spectral variance:
+\[
+\sigma^2 = \sum_{i=1}^9 \left( \frac{\partial f}{\partial x_i} \right)^2.
+\]
+
+Envelope violation:
+\[
+\sigma^2 > \sigma_{\max}^2 \Rightarrow m = 2.
+\]
+
+\section{Bisimulation}
+
+Define bisimulation relation:
+\[
+\bm{e} \sim \bm{s}
+\]
+if:
+\[
+\Delta_R \bm{e} = \Delta_R \bm{s}
+\]
+and
+\[
+m(\bm{e}) = m(\bm{s}).
+\]
+
+This ensures expressive and spectral states evolve consistently.
+
+\section{Conclusion}
+
+v4.0 Mathématique provides a runtime-aligned mathematical backbone suitable for
+Option C. It formalizes the Laplacian, operator algebra, membrane invariants,
+drift clamps, thermodynamic envelope, and bisimulation in a manner compatible
+with deterministic Rust execution and mobile constraints.
+
+\section{References}
+
+\begin{thebibliography}{9}
+
+\bibitem{doCarmo}
+M. P. do Carmo,
+\textit{Riemannian Geometry},
+Birkhäuser, 1992.
+
+\bibitem{leeSmooth}
+J. M. Lee,
+\textit{Introduction to Smooth Manifolds},
+Springer, 2012.
+
+\bibitem{evansPDE}
+L. C. Evans,
+\textit{Partial Differential Equations},
+American Mathematical Society, 2010.
+
+\bibitem{rudinFA}
+W. Rudin,
+\textit{Functional Analysis},
+McGraw-Hill, 1991.
+
+\bibitem{hairerODE}
+E. Hairer, S. P. Nørsett, G. Wanner,
+\textit{Solving Ordinary Differential Equations I},
+Springer, 1993.
+
+\bibitem{sastryNonlinear}
+S. Sastry,
+\textit{Nonlinear Systems: Analysis, Stability, and Control},
+Springer, 1999.
+
+\bibitem{boydConvex}
+S. Boyd, L. Vandenberghe,
+\textit{Convex Optimization},
+Cambridge University Press, 2004.
+
+\end{thebibliography}
+
+\end{document}
