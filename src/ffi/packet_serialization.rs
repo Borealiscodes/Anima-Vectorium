@@ -16,10 +16,10 @@ impl ExpressiveStatePacket {
     pub fn from_state(state: &VectoriumState) -> Self {
         Self {
             timestamp_ms: state.timestamp_ms,
-            expressive_vector: state.expressive_vector,
-            drift_vector: state.drift_vector,
+            expressive_vector: state.expressive.data,
+            drift_vector: state.drift.data,
             stability_score: state.stability_score,
-            membrane_state: state.membrane_state,
+            membrane_state: state.membrane as u8,
             fog_density: state.fog_density,
             glyph_hint: state.glyph_hint,
         }
@@ -46,10 +46,10 @@ pub struct ThermodynamicTelemetry {
 impl ThermodynamicTelemetry {
     pub fn from_state(state: &VectoriumState) -> Self {
         Self {
-            power_mw: state.power_mw,
+            power_mw: state.telemetry.power_mw,
             envelope_violation: state.envelope_violation,
-            laplacian_load: state.laplacian_load,
-            spectral_variance: state.spectral_variance,
+            laplacian_load: state.telemetry.laplacian_load,
+            spectral_variance: state.telemetry.spectral_variance,
         }
     }
 }
