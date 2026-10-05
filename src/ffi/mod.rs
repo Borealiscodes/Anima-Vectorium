@@ -1,4 +1,8 @@
+pub mod packet_serialization;
+pub mod bindings;
+
 use crate::runtime::state::VectoriumState;
+use crate::runtime::operator_dispatch::apply_operator;
 use crate::ffi::packet_serialization::{
     ExpressiveStatePacket,
     ThermodynamicTelemetry,
@@ -78,7 +82,7 @@ pub extern "C" fn get_haptic_envelope_json(state_ptr: *mut VectoriumState) -> *m
 
 //
 // ────────────────────────────────────────────────────────────────
-//   Artifact 13 — Operator Injection (Minimal Patch)
+//   Artifact 13 — Operator Injection (Stabilized Routing)
 // ────────────────────────────────────────────────────────────────
 //
 
@@ -98,6 +102,7 @@ pub extern "C" fn inject_operator_json(
     let json_str = c_str.to_str().unwrap_or("");
 
     if let Ok(op) = serde_json::from_str::<Operator>(json_str) {
-        state.inject_operator(op);
+        // Route through the runtime's operator dispatch path
+        apply_operator(&mut state.expressive, &mut state.drift, &op);
     }
 }
