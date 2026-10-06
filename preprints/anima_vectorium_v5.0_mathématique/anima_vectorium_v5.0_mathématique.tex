@@ -1,0 +1,357 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+\title{Anima-Vectorium Mathématique v5.0 \\
+\large Geometric–Thermodynamic Foundations for the Vectorium Engine}
+\author{Borealis S. Hedling}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Anima-Vectorium v5.0 establishes a unified mathematical backbone integrating
+geometric curvature, holonomy transport, non-linear operator algebra,
+thermodynamic free-energy dynamics, spectral-to-geometric translation rules,
+runtime invariants, and FFI boundary constraints. This document supersedes v4.0
+and provides the complete mathematical foundation required for executable
+Rust/Python/FFI implementation of the Vectorium engine.
+\end{abstract}
+
+\tableofcontents
+
+%------------------------------------------------------------
+\section{Foundations}
+
+\subsection{State Space}
+The Vectorium state space is defined as
+\[
+\mathcal{S} = \{ (x, M, \kappa, \delta) \mid x \in \mathbb{R}^n \},
+\]
+where $x$ is the tensor state, $M$ is metadata, $\kappa$ is the curvature field,
+and $\delta$ is the drift field.
+
+\subsection{Tensor Manifold}
+The tensor manifold $\mathcal{M}$ is a smooth Riemannian manifold equipped with
+a metric $g$. For tangent vectors $u, v \in T_x\mathcal{M}$,
+\[
+g_x(u, v) = u^\top G(x) v,
+\]
+where $G(x)$ is a positive-definite matrix field. The Euclidean case corresponds
+to $G(x) = I$. Vectorium-specific curvature behavior is modeled by
+\[
+G(x) = I + \lambda \cdot \Phi(x),
+\]
+where $\Phi(x)$ is activation-induced curvature.
+
+\subsection{Metadata Fields}
+Metadata $M$ consists of symbolic labels and scalar weights that do not
+contribute to curvature. Metadata is preserved under holonomy transport and
+does not affect thermodynamic gradients.
+
+%------------------------------------------------------------
+\section{Geometric Layer}
+
+\subsection{Curvature Operator}
+Curvature is defined by
+\[
+\kappa(x) = \nabla^2 x + \Phi(x),
+\]
+where $\Phi(x)$ is activation-induced curvature (Section 3). The Laplacian
+$\nabla^2$ is defined with respect to the metric $g$.
+
+\subsection{Connection for Parallel Transport}
+Holonomy transport requires a connection $\nabla$ compatible with $g$. Vectorium
+uses the Levi-Civita connection:
+\[
+\nabla_u v = \partial_u v + \Gamma(u, v),
+\]
+with Christoffel symbols
+\[
+\Gamma^k_{ij} = \frac{1}{2} G^{kl}
+\left(
+\partial_i G_{jl}
++ \partial_j G_{il}
+- \partial_l G_{ij}
+\right).
+\]
+
+\subsection{Holonomy Transport}
+Parallel transport along a curve $\gamma(t)$ satisfies
+\[
+\nabla_{\dot{\gamma}(t)} v(t) = 0.
+\]
+Holonomy around a closed loop $\gamma$ is
+\[
+\mathcal{H}(x) = x + \oint_{\gamma} \kappa \cdot d\gamma.
+\]
+
+\subsection{Drift Fields}
+Drift fields $\delta$ represent directional tendencies in state evolution.
+Spectral drift fields are translated into geometric gradient fields (Section 5).
+
+\subsection{Geometric Invariants}
+Curvature invariants:
+\[
+\int \kappa(x) \, dx = \text{constant}.
+\]
+Holonomy invariants:
+\[
+\oint_{\gamma} \kappa \cdot d\gamma = \text{constant}.
+\]
+
+%------------------------------------------------------------
+\section{Non-Linear Operator Layer}
+
+\subsection{Activation Operators}
+
+Activation operators induce curvature in the tensor manifold. For a state $x$,
+the activation-induced curvature term is denoted $\Phi(x)$.
+
+\paragraph{GELU.}
+\[
+\Phi_{\text{GELU}}(x) =
+x \cdot \frac{1}{2}\left(1 + \mathrm{erf}\left(\frac{x}{\sqrt{2}}\right)\right).
+\]
+
+\paragraph{SwiGLU.}
+\[
+\Phi_{\text{SwiGLU}}(x) = (xW_1) \odot \sigma(xW_2).
+\]
+
+\paragraph{Softplus.}
+\[
+\Phi_{\text{Softplus}}(x) = \log(1 + e^x).
+\]
+
+\paragraph{Tanh.}
+\[
+\Phi_{\tanh}(x) = \tanh(x).
+\]
+
+%------------------------------------------------------------
+\subsection{Normalization Operators}
+
+Normalization stabilizes curvature and prevents drift blowout.
+
+\paragraph{LayerNorm.}
+\[
+\mathrm{LayerNorm}(x) = \frac{x - \mu(x)}{\sigma(x)}.
+\]
+
+\paragraph{RMSNorm.}
+\[
+\mathrm{RMSNorm}(x) = \frac{x}{\sqrt{\frac{1}{n}\sum_i x_i^2}}.
+\]
+
+\paragraph{GroupNorm.}
+\[
+\mathrm{GroupNorm}(x) = \frac{x - \mu(G_k)}{\sigma(G_k)}.
+\]
+
+%------------------------------------------------------------
+\subsection{Residual Mixing Operators}
+
+Residual mixing preserves holonomy invariants and stabilizes geometric evolution.
+
+\paragraph{Standard Residual.}
+\[
+\mathrm{Residual}(x, y) = x + y.
+\]
+
+\paragraph{Curvature-Aware Residual.}
+\[
+\mathrm{Residual}_{\kappa}(x, y) = x + \kappa(y).
+\]
+
+%------------------------------------------------------------
+\subsection{Operator Algebra}
+
+Let $\mathcal{O}$ denote the set of all engine-layer operators.
+
+\paragraph{Composition.}
+\[
+(O_2 \circ O_1)(x) = O_2(O_1(x)).
+\]
+
+\paragraph{Associativity.}
+\[
+O_3 \circ (O_2 \circ O_1) = (O_3 \circ O_2) \circ O_1.
+\]
+
+\paragraph{Non-Commutation.}
+\[
+\mathrm{Norm} \circ \mathrm{Act} \ne \mathrm{Act} \circ \mathrm{Norm}.
+\]
+
+\paragraph{Curvature-Induced Deformation.}
+\[
+(O_2 \circ O_1)_{\kappa}(x)
+= O_2(O_1(x)) + \kappa(x).
+\]
+
+%------------------------------------------------------------
+\section{Thermodynamic Layer}
+
+\subsection{Free-Energy Functional}
+
+\[
+F(s) = A(s) + C(s) + S(s),
+\]
+
+\subsection{Accuracy Term}
+\[
+A(s) = \|x - \hat{x}(s)\|^2.
+\]
+
+\subsection{Complexity Term}
+\[
+C(s) = \frac{\lambda}{2} \|s\|^2.
+\]
+
+\subsection{Surprise Term}
+\[
+S(s) = -\log p(x \mid s).
+\]
+
+\subsection{Free-Energy Gradient}
+\[
+\nabla F(s) =
+\nabla A(s) +
+\nabla C(s) +
+\nabla S(s).
+\]
+
+\subsection{Attractor Basins}
+\[
+\mathcal{B}(s) = \{ x \mid F(x) < F(s) \}.
+\]
+
+\subsection{Dissipation Curves}
+\[
+D(s_t, s_{t+1}) = F(s_t) - F(s_{t+1}),
+\quad D(s_t, s_{t+1}) \ge 0.
+\]
+
+\subsection{Active Inference Update Rule}
+\[
+s_{t+1} =
+\mathrm{ResidualMix}\Big(
+    s_t,\;
+    \mathcal{H}\big(
+        s_t - \eta \cdot \mathrm{SelectedDrive}(s_t)
+    \big)
+\Big).
+\]
+
+\subsection{Jacobian of the Update Rule}
+\[
+J = \frac{\partial U}{\partial s_t},
+\quad \|J\| \le 1.
+\]
+
+%------------------------------------------------------------
+\section{Spectral Translation Layer}
+
+\subsection{Drift-to-Gradient Translation}
+\[
+\delta_{\text{spectral}} \mapsto \nabla F(s).
+\]
+
+\subsection{Homotopy-to-Holonomy Translation}
+\[
+\mathcal{H}_{\text{spectral}} \mapsto \mathcal{H}.
+\]
+
+\subsection{Resonance-to-Arbitration Translation}
+\[
+R_{\text{spectral}} \mapsto \mathrm{DriveConflictArbitration}.
+\]
+
+\subsection{Fossilized Constructs}
+Spectral curvature operators, continuous spectral manifolds, narrative gravity
+fields, and collapse-fractal recursion remain excluded.
+
+%------------------------------------------------------------
+\section{Invariants and Stability}
+
+\subsection{Curvature Invariants}
+\[
+\|\kappa(x)\| \le K_{\max}.
+\]
+
+\subsection{Holonomy Stability}
+\[
+\left|\oint_{\gamma} \kappa \cdot d\gamma\right| \le H_{\max}.
+\]
+
+\subsection{Thermodynamic Invariants}
+\[
+F(s_{t+1}) \le F(s_t).
+\]
+
+%------------------------------------------------------------
+\section{Runtime Alignment Notes}
+
+\subsection{Execution Ordering}
+\begin{enumerate}
+    \item Activation
+    \item Normalization
+    \item Drive Arbitration
+    \item Residual Mixing
+    \item Curvature Update
+    \item Holonomy Transport
+\end{enumerate}
+
+\subsection{FFI Boundary Conditions}
+\[
+\kappa(s_{\text{Rust}}) = \kappa(s_{\text{Python}}),
+\quad
+\mathcal{H}(s_{\text{Rust}}) = \mathcal{H}(s_{\text{Python}}),
+\quad
+F(s_{\text{Rust}}) = F(s_{\text{Python}}).
+\]
+
+%------------------------------------------------------------
+\section{Acknowledgements}
+
+The author acknowledges Stell for foundational insights into spectral-state
+behavior, collapse dynamics, and homotopy structure, which directly informed the
+geometric reformulation and spectral translation framework.
+
+%------------------------------------------------------------
+\section{References}
+
+\begin{thebibliography}{9}
+
+\bibitem{friston2010}
+K. Friston,
+\textit{The Free-Energy Principle: A Unified Brain Theory?}
+Nature Reviews Neuroscience, 2010.
+
+\bibitem{kobayashi}
+S. Kobayashi,
+\textit{Differential Geometry of Curves and Surfaces},
+Springer, 1995.
+
+\bibitem{hendrycks}
+D. Hendrycks and K. Gimpel,
+\textit{Gaussian Error Linear Units (GELUs)},
+arXiv:1606.08415.
+
+\bibitem{carmo}
+M. do Carmo,
+\textit{Riemannian Geometry},
+Birkhäuser, 1992.
+
+\bibitem{beck}
+C. Beck and F. Schloegl,
+\textit{Thermodynamics of Chaotic Systems},
+Cambridge University Press, 1993.
+
+\end{thebibliography}
+
+\end{document}
