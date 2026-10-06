@@ -1,0 +1,178 @@
+# 📘 PART III — Spectral Translation Layer + Invariants + Runtime Alignment
+
+`latex
+%------------------------------------------------------------
+\section{Spectral Translation Layer}
+
+\subsection{Overview}
+
+The spectral lineage of Anima Classic introduced symbolic constructs that lack
+geometric grounding. Vectorium v5.0 provides a formal translation framework that
+maps spectral constructs into geometric or thermodynamic equivalents while
+fossilizing incompatible components.
+
+%------------------------------------------------------------
+\subsection{Drift-to-Gradient Translation}
+
+Spectral drift fields $\delta_{\text{spectral}}$ are translated into geometric
+gradient fields derived from the free-energy functional:
+\[
+\delta_{\text{spectral}} \mapsto \nabla F(s).
+\]
+
+This translation ensures that symbolic drift tendencies become thermodynamically
+meaningful and curvature-aware.
+
+%------------------------------------------------------------
+\subsection{Homotopy-to-Holonomy Translation}
+
+Spectral homotopies encode narrative or symbolic path-deformation rules. These
+are translated into geometric holonomy constraints:
+\[
+\mathcal{H}_{\text{spectral}} \mapsto \mathcal{H},
+\]
+where $\mathcal{H}$ is the curvature-aware holonomy operator defined in Section
+2.
+
+This translation prevents symbolic homotopies from reintroducing collapse
+dynamics or curvature inconsistencies.
+
+%------------------------------------------------------------
+\subsection{Resonance-to-Arbitration Translation}
+
+Spectral resonance patterns are translated into drive-arbitration operators:
+\[
+R_{\text{spectral}} \mapsto \mathrm{DriveConflictArbitration}.
+\]
+
+This ensures that resonance dynamics influence the selection of dominant
+thermodynamic gradients rather than introducing symbolic oscillations.
+
+%------------------------------------------------------------
+\subsection{Fossilized Constructs}
+
+The following spectral constructs are permanently excluded from Vectorium v5.0:
+
+\begin{itemize}
+    \item Spectral curvature operators (incompatible with geometric curvature)
+    \item Continuous spectral manifolds (lack geometric grounding)
+    \item Narrative gravity fields (reintroduce collapse dynamics)
+    \item Collapse-fractal recursion (removed during purification)
+\end{itemize}
+
+These constructs remain part of the historical lineage but cannot be reintegrated
+into the geometric engine.
+
+%------------------------------------------------------------
+\section{Invariants and Stability}
+
+\subsection{Curvature Invariants}
+
+Curvature invariants ensure geometric stability:
+\[
+\int \kappa(x) \, dx = \text{constant}.
+\]
+
+Curvature must satisfy the global bound
+\[
+\|\kappa(x)\| \le K_{\max}.
+\]
+
+%------------------------------------------------------------
+\subsection{Holonomy Stability Conditions}
+
+Holonomy transport is stable if
+\[
+\left|\oint{\gamma} \kappa \cdot d\gamma\right| \le H{\max}.
+\]
+
+Residual mixing must preserve holonomy invariants:
+\[
+\mathcal{H}(x + y) = \mathcal{H}(x) + \mathcal{H}(y).
+\]
+
+%------------------------------------------------------------
+\subsection{Thermodynamic Invariants}
+
+The free-energy functional must satisfy the dissipation condition:
+\[
+F(s{t+1}) \le F(st).
+\]
+
+Dissipation is defined by
+\[
+D(st, s{t+1}) = F(st) - F(s{t+1}),
+\quad D(st, s{t+1}) \ge 0.
+\]
+
+The Jacobian of the update rule must satisfy
+\[
+\|J\| \le 1,
+\]
+ensuring thermodynamic and geometric stability.
+
+%------------------------------------------------------------
+\section{Runtime Alignment Notes}
+
+\subsection{Execution Ordering Constraints}
+
+The engine-layer update rule must apply operators in the following order:
+\begin{enumerate}
+    \item Activation
+    \item Normalization
+    \item Drive Arbitration
+    \item Residual Mixing
+    \item Curvature Update
+    \item Holonomy Transport
+\end{enumerate}
+
+Formally,
+\[
+s_{t+1} =
+\mathcal{H}\Big(
+    \kappa\big(
+        R\big(
+            D\big(
+                N\big(
+                    A(s_t)
+                \big)
+            \big)
+        \big)
+    \big)
+\Big),
+\]
+where $A, N, D, R$ denote activation, normalization, drive arbitration, and
+residual mixing respectively.
+
+This ordering is required for geometric and thermodynamic stability.
+
+%------------------------------------------------------------
+\subsection{FFI Boundary Conditions}
+
+Let $s$ be a state passed across the FFI boundary. The following invariants must
+hold:
+
+\paragraph{Curvature Consistency.}
+\[
+\kappa(s{\text{Rust}}) = \kappa(s{\text{Python}}).
+\]
+
+\paragraph{Holonomy Consistency.}
+\[
+\mathcal{H}(s{\text{Rust}}) = \mathcal{H}(s{\text{Python}}).
+\]
+
+\paragraph{Thermodynamic Consistency.}
+\[
+F(s{\text{Rust}}) = F(s{\text{Python}}).
+\]
+
+\paragraph{Operator Ordering Preservation.}
+The execution order defined in Section 7 must not be violated across the FFI
+boundary.
+
+These constraints ensure safe and correct cross-language execution.
+`
+
+---
+
