@@ -1,0 +1,226 @@
+# 📘 PART II — Non‑Linear Operator Layer + Thermodynamic Layer
+
+`latex
+%------------------------------------------------------------
+\section{Non-Linear Operator Layer}
+
+\subsection{Activation Operators}
+
+Activation operators induce curvature in the tensor manifold. For a state $x$,
+the activation-induced curvature term is denoted $\Phi(x)$.
+
+\paragraph{GELU.}
+\[
+\Phi_{\text{GELU}}(x) =
+x \cdot \frac{1}{2}\left(1 + \mathrm{erf}\left(\frac{x}{\sqrt{2}}\right)\right).
+\]
+
+\paragraph{SwiGLU.}
+\[
+\Phi{\text{SwiGLU}}(x) = (xW1) \odot \sigma(xW_2),
+\]
+where $W1, W2$ are learned matrices and $\sigma$ is the sigmoid function.
+
+\paragraph{Softplus.}
+\[
+\Phi_{\text{Softplus}}(x) = \log(1 + e^x).
+\]
+
+\paragraph{Tanh.}
+\[
+\Phi_{\tanh}(x) = \tanh(x).
+\]
+
+These operators generate non-linear curvature contributions that directly affect
+holonomy transport and thermodynamic gradients.
+
+%------------------------------------------------------------
+\subsection{Normalization Operators}
+
+Normalization stabilizes curvature and prevents drift blowout.
+
+\paragraph{LayerNorm.}
+\[
+\mathrm{LayerNorm}(x) = \frac{x - \mu(x)}{\sigma(x)}.
+\]
+
+\paragraph{RMSNorm.}
+\[
+\mathrm{RMSNorm}(x) = \frac{x}{\sqrt{\frac{1}{n}\sumi xi^2}}.
+\]
+
+\paragraph{GroupNorm.}
+Group normalization partitions $x$ into groups $G_k$:
+\[
+\mathrm{GroupNorm}(x) = \frac{x - \mu(Gk)}{\sigma(Gk)}.
+\]
+
+%------------------------------------------------------------
+\subsection{Residual Mixing Operators}
+
+Residual mixing preserves holonomy invariants and stabilizes geometric evolution.
+
+\paragraph{Standard Residual.}
+\[
+\mathrm{Residual}(x, y) = x + y.
+\]
+
+\paragraph{Curvature-Aware Residual.}
+\[
+\mathrm{Residual}_{\kappa}(x, y) = x + \kappa(y).
+\]
+
+This operator ensures curvature consistency across update steps.
+
+%------------------------------------------------------------
+\subsection{Operator Algebra}
+
+Let $\mathcal{O}$ denote the set of all engine-layer operators.
+
+\paragraph{Composition.}
+\[
+(O2 \circ O1)(x) = O2(O1(x)).
+\]
+
+\paragraph{Associativity.}
+\[
+O3 \circ (O2 \circ O1) = (O3 \circ O2) \circ O1.
+\]
+
+\paragraph{Non-Commutation.}
+\[
+\mathrm{Norm} \circ \mathrm{Act} \ne \mathrm{Act} \circ \mathrm{Norm}.
+\]
+
+\paragraph{Curvature-Induced Deformation.}
+\[
+(O2 \circ O1)_{\kappa}(x)
+= O2(O1(x)) + \kappa(x).
+\]
+
+This deformation is essential for holonomy correctness.
+
+%------------------------------------------------------------
+\section{Thermodynamic Layer}
+
+\subsection{Free-Energy Functional}
+
+The free-energy functional is defined as
+\[
+F(s) = A(s) + C(s) + S(s),
+\]
+where $A$ is accuracy, $C$ is complexity, and $S$ is surprise.
+
+%------------------------------------------------------------
+\subsection{Accuracy Term}
+
+Accuracy measures alignment between predicted and observed states:
+\[
+A(s) = \|x - \hat{x}(s)\|^2.
+\]
+
+%------------------------------------------------------------
+\subsection{Complexity Term}
+
+Complexity penalizes overly complex internal states:
+\[
+C(s) = \frac{\lambda}{2} \|s\|^2.
+\]
+
+Alternative sparsity-based complexity:
+\[
+C{\text{sparse}}(s) = \lambda \|s\|1.
+\]
+
+%------------------------------------------------------------
+\subsection{Surprise Term}
+
+Surprise measures deviation from expected sensory input:
+\[
+S(s) = -\log p(x \mid s).
+\]
+
+For Gaussian sensory models:
+\[
+S(s) =
+\frac{1}{2} (x - \mus)^\top \Sigmas^{-1} (x - \mu_s)
++ \frac{1}{2} \log |\Sigma_s|.
+\]
+
+%------------------------------------------------------------
+\subsection{Free-Energy Gradient}
+
+The gradient of free energy is
+\[
+\nabla F(s) =
+\nabla A(s) +
+\nabla C(s) +
+\nabla S(s).
+\]
+
+This gradient drives active inference.
+
+%------------------------------------------------------------
+\subsection{Attractor Basins}
+
+Attractor basins are defined by
+\[
+\mathcal{B}(s) = \{ x \mid F(x) < F(s) \}.
+\]
+
+These basins determine the system’s thermodynamic tendencies.
+
+%------------------------------------------------------------
+\subsection{Dissipation Curves}
+
+Dissipation between successive states is
+\[
+D(st, s{t+1}) = F(st) - F(s{t+1}),
+\quad D(st, s{t+1}) \ge 0.
+\]
+
+This ensures thermodynamic stability.
+
+%------------------------------------------------------------
+\subsection{Active Inference Update Rule}
+
+The full update rule is
+\[
+s_{t+1} =
+\mathrm{ResidualMix}\Big(
+    s_t,\;
+    \mathcal{H}\big(
+        st - \eta \cdot \mathrm{SelectedDrive}(st)
+    \big)
+\Big).
+\]
+
+%------------------------------------------------------------
+\subsection{Jacobian of the Update Rule}
+
+Let
+\[
+U(s_t) =
+\mathrm{ResidualMix}\Big(
+    s_t,\;
+    \mathcal{H}\big(
+        st - \eta \cdot \mathrm{SelectedDrive}(st)
+    \big)
+\Big).
+\]
+
+The Jacobian is
+\[
+J = \frac{\partial U}{\partial s_t}.
+\]
+
+Stability requires
+\[
+\|J\| \le 1.
+\]
+
+This prevents curvature blowout and holonomy distortion.
+`
+
+---
+
