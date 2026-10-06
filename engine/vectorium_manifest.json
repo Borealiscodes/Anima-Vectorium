@@ -1,0 +1,64 @@
+{
+  "vectorium_version": "5.0",
+  "modules": {
+    "curvature": {
+      "files": [
+        "src/curvature/mod.rs",
+        "src/curvature/laplacian.rs",
+        "src/curvature/activation_curvature.rs"
+      ],
+      "invariants": ["curvature_bound"]
+    },
+    "holonomy": {
+      "files": [
+        "src/holonomy/mod.rs",
+        "src/holonomy/transport.rs"
+      ],
+      "invariants": ["holonomy_bound"]
+    },
+    "operators": {
+      "files": [
+        "src/operators/mod.rs",
+        "src/operators/activation.rs",
+        "src/operators/normalization.rs",
+        "src/operators/residual.rs"
+      ],
+      "ordering": true
+    },
+    "thermodynamics": {
+      "files": [
+        "src/thermodynamics/mod.rs",
+        "src/thermodynamics/free_energy.rs",
+        "src/thermodynamics/gradients.rs",
+        "src/thermodynamics/dissipation.rs"
+      ],
+      "invariants": ["dissipation"]
+    },
+    "runtime": {
+      "files": [
+        "src/runtime/mod.rs",
+        "src/runtime/state.rs",
+        "src/runtime/update_rule.rs"
+      ],
+      "invariants": ["jacobian_stability", "operator_ordering"]
+    },
+    "ffi": {
+      "files": ["src/ffi/mod.rs"],
+      "invariants": ["ffi_consistency"]
+    }
+  },
+  "global_invariants": [
+    "curvature_bound",
+    "holonomy_bound",
+    "dissipation",
+    "jacobian_stability",
+    "operator_ordering",
+    "ffi_consistency"
+  ],
+  "fossilized_constructs": [
+    "spectral_curvature",
+    "narrative_gravity",
+    "collapse_fractal",
+    "continuousspectralmanifold"
+  ]
+}

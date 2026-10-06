@@ -8,10 +8,14 @@
 //! - Maintain Jacobian stability: ||J|| ≤ 1
 //! - Enforce operator ordering strictly
 //! - Avoid fossilized spectral constructs
-//! ================================================================================
+//! ==============================================================================
 
-pub mod init;
-pub mod tick;
-pub mod state;
-pub mod operator_dispatch;
 pub mod handle;
+pub mod init;
+pub mod operator_dispatch;
+pub mod state;
+pub mod tick;
+pub mod update_rule;
+
+pub use state::{RuntimeState, VectoriumState};
+pub use update_rule::{jacobian_stability, update};
