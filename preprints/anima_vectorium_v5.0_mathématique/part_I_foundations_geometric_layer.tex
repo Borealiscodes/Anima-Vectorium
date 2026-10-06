@@ -1,0 +1,110 @@
+# 📘 PART I — Front Matter, Foundations, Geometric Layer
+
+`latex
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+\title{Anima-Vectorium Mathématique v5.0 \\
+\large Geometric–Thermodynamic Foundations for the Vectorium Engine}
+\author{Borealis S. Hedling}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Anima-Vectorium v5.0 establishes a unified mathematical backbone integrating
+geometric curvature, holonomy transport, non-linear operator algebra,
+thermodynamic free-energy dynamics, and spectral-to-geometric translation rules.
+This document supersedes v4.0 and provides the complete mathematical foundation
+required for executable Rust/Python/FFI implementation of the Vectorium engine.
+\end{abstract}
+
+\tableofcontents
+
+%------------------------------------------------------------
+\section{Foundations}
+
+\subsection{State Space}
+The Vectorium state space is defined as
+\[
+\mathcal{S} = \{ (x, M, \kappa, \delta) \mid x \in \mathbb{R}^n \},
+\]
+where $x$ is the tensor state, $M$ is metadata, $\kappa$ is the curvature field,
+and $\delta$ is the drift field.
+
+\subsection{Tensor Manifold}
+The tensor manifold $\mathcal{M}$ is a smooth Riemannian manifold equipped with
+a metric $g$. For tangent vectors $u, v \in T_x\mathcal{M}$,
+\[
+g_x(u, v) = u^\top G(x) v,
+\]
+where $G(x)$ is a positive-definite matrix field. The Euclidean case corresponds
+to $G(x) = I$. Vectorium-specific curvature behavior is modeled by
+\[
+G(x) = I + \lambda \cdot \Phi(x),
+\]
+where $\Phi(x)$ is activation-induced curvature.
+
+\subsection{Metadata Fields}
+Metadata $M$ consists of symbolic labels and scalar weights that do not
+contribute to curvature. Metadata is preserved under holonomy transport and
+does not affect thermodynamic gradients.
+
+%------------------------------------------------------------
+\section{Geometric Layer}
+
+\subsection{Curvature Operator}
+Curvature is defined by
+\[
+\kappa(x) = \nabla^2 x + \Phi(x),
+\]
+where $\Phi(x)$ is activation-induced curvature (Section 3). The Laplacian
+$\nabla^2$ is defined with respect to the metric $g$.
+
+\subsection{Connection for Parallel Transport}
+Holonomy transport requires a connection $\nabla$ compatible with $g$. Vectorium
+uses the Levi-Civita connection:
+\[
+\nablau v = \partialu v + \Gamma(u, v),
+\]
+with Christoffel symbols
+\[
+\Gamma^k_{ij} = \frac{1}{2} G^{kl}
+\left(
+\partiali G{jl}
++ \partialj G{il}
+- \partiall G{ij}
+\right).
+\]
+
+\subsection{Holonomy Transport}
+Parallel transport along a curve $\gamma(t)$ satisfies
+\[
+\nabla_{\dot{\gamma}(t)} v(t) = 0.
+\]
+Holonomy around a closed loop $\gamma$ is
+\[
+\mathcal{H}(x) = x + \oint_{\gamma} \kappa \cdot d\gamma.
+\]
+
+\subsection{Drift Fields}
+Drift fields $\delta$ represent directional tendencies in state evolution.
+Spectral drift fields are translated into geometric gradient fields (Section 5).
+
+\subsection{Geometric Invariants}
+Curvature invariants:
+\[
+\int \kappa(x) \, dx = \text{constant}.
+\]
+Holonomy invariants:
+\[
+\oint_{\gamma} \kappa \cdot d\gamma = \text{constant}.
+\]
+`
+
+---
+
