@@ -1,3 +1,13 @@
+//! ======================= Vectorium Runtime Entry — Copilot Guidance ==============
+//! This file orchestrates high-level runtime behavior for the Vectorium engine.
+//!
+//! Copilot must:
+//! - Use the update rule exactly as defined in v5.0
+//! - Ensure all state evolution preserves invariants and operator ordering
+//! - Avoid generating deprecated spectral constructs
+//! - Consult COPILOT_MAP.md before generating logic
+//! ================================================================================
+
 use std::time::{Duration, Instant};
 use vectorium::{
     initialize_vectorium,
