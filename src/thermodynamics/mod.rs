@@ -6,8 +6,14 @@
 //! - Preserve dissipation invariants
 //! - Maintain gradient correctness for A, C, and S
 //! - Avoid implementing spectral curvature or collapse-fractal recursion
-//! ================================================================================
+//! ==============================================================================
 
-pub mod envelope;
-pub mod telemetry;
-pub mod power_budget;
+pub mod dissipation;
+pub mod free_energy;
+pub mod gradients;
+
+pub use dissipation::*;
+pub use free_energy::*;
+pub use gradients::*;
+
+pub const DISSIPATION_EPSILON: f32 = 1e-5;

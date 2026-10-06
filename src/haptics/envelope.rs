@@ -1,26 +1,16 @@
-use serde::{Serialize, Deserialize};
-
-#[derive(Debug, Clone, Copy, Serialize, Deserialize)]
-pub enum DeviceClass {
-    Mobile = 0,
-    Controller = 1,
-    DesktopPeripheral = 2,
+#[derive(Debug, Clone)]
+pub struct HapticEnvelope {
+    pub amplitude: f32,
+    pub frequency: f32,
+    pub temporal_curve: [f32; 4],
 }
 
-impl DeviceClass {
-    pub fn max_amplitude(self) -> f32 {
-        match self {
-            DeviceClass::Mobile => 0.4,
-            DeviceClass::Controller => 0.7,
-            DeviceClass::DesktopPeripheral => 1.0,
-        }
-    }
-
-    pub fn max_frequency(self) -> f32 {
-        match self {
-            DeviceClass::Mobile => 180.0,
-            DeviceClass::Controller => 220.0,
-            DeviceClass::DesktopPeripheral => 260.0,
+impl HapticEnvelope {
+    pub fn new(amplitude: f32, frequency: f32, temporal_curve: [f32; 4]) -> Self {
+        Self {
+            amplitude: amplitude.clamp(0.0, 1.0),
+            frequency: frequency.clamp(0.0, 1000.0),
+            temporal_curve,
         }
     }
 }

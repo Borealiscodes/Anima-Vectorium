@@ -8,11 +8,10 @@ pub fn apply_operator(
     operator: &Operator,
 ) {
     operator.apply(&mut expressive.data);
-
-    // Drift increases proportionally to operator magnitude
+    
     for i in 0..3 {
         drift.data[i] += operator.direction[i] * operator.magnitude * 0.1;
     }
-
+    
     expressive.normalize();
 }

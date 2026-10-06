@@ -1,23 +1,18 @@
-use serde::{Serialize, Deserialize};
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct HapticEnvelope {
-    pub amplitude: f32,
-    pub frequency: f32,
-    pub temporal_curve: [f32; 4],
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum DeviceClass {
+    Mobile = 0,
+    Desktop = 1,
+    Wearable = 2,
+    Haptic = 3,
 }
 
-impl HapticEnvelope {
-    pub fn new(amplitude: f32, frequency: f32, temporal_curve: [f32; 4]) -> Self {
-        Self {
-            amplitude,
-            frequency,
-            temporal_curve,
+impl DeviceClass {
+    pub fn from_u8(value: u8) -> Self {
+        match value {
+            1 => DeviceClass::Desktop,
+            2 => DeviceClass::Wearable,
+            3 => DeviceClass::Haptic,
+            _ => DeviceClass::Mobile,
         }
-    }
-
-    pub fn scale(&mut self, factor: f32) {
-        self.amplitude *= factor;
-        self.frequency *= factor;
     }
 }

@@ -14,11 +14,12 @@ impl RuntimeHandle {
     }
 
     pub fn inject_operator(&mut self, op: Operator) {
-        tick(&mut self.state, Some(op), 16);
+        self.state.expressive.data[0] += op.magnitude * op.direction[0];
+        tick(&mut self.state);
     }
 
     pub fn tick(&mut self) {
-        tick(&mut self.state, None, 16);
+        tick(&mut self.state);
     }
 
     pub fn get_state(&self) -> &RuntimeState {

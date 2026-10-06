@@ -1,5 +1,5 @@
 use super::state::RuntimeState;
 
-pub fn initialize_runtime() -> RuntimeState {
+pub fn initialize() -> RuntimeState {
     RuntimeState::new()
 }
