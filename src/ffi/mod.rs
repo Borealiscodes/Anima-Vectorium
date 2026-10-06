@@ -1,3 +1,14 @@
+//! ======================= FFI Module — Copilot Guidance ===========================
+//! Implements cross-language invariants and Rust/Python boundary conditions.
+//!
+//! Copilot must ensure:
+//! - κ(s_rust) == κ(s_python)
+//! - H(s_rust) == H(s_python)
+//! - F(s_rust) == F(s_python)
+//! - Operator ordering is preserved across the boundary
+//! - No deprecated spectral constructs cross the FFI boundary
+//! ================================================================================
+
 pub mod packet_serialization;
 pub mod bindings;
 
